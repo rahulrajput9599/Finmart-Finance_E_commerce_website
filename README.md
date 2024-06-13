@@ -1,2 +1,2 @@
 Finmart  
- (web development project , related to finance e-commerce) 
+(web development project , related to finance e-commerce) 
