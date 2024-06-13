@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonds Information</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+       .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.bond-section {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    color: #fff;
+    position: relative;
+    transition: all 0.3s ease;
+    background-color: #4CAF50; /* Default background color */
+}
+
+.bond-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.bond-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.bond-section p {
+    font-size: 16px;
+}
+
+.bond-section .invest-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 11px;
+    transition: background-color 0.3s;
+}
+
+.bond-section .invest-btn:hover {
+    background-color: #555;
+}
+
+.govt-bonds {
+    background-color: #9C27B0; /* Different color for government bonds */
+}
+
+.corporate-bonds {
+    background-color: #2196F3; /* Different color for corporate bonds */
+}
+
+.municipal-bonds {
+    background-color: #FF9800; /* Different color for municipal bonds */
+}
+
+.convertible-bonds {
+    background-color: #FFC107; /* Different color for convertible bonds */
+}
+
+.junk-bonds {
+    background-color: #795548; /* Different color for junk bonds */
+}
+
+.sovereign-bonds {
+    background-color: #4CAF50; /* Different color for sovereign bonds */
+}
+
+.agency-bonds {
+    background-color: #607D8B; /* Different color for agency bonds */
+}
+
+.foreign-bonds {
+    background-color: #FF5722; /* Different color for foreign bonds */
+}
+
+.green-bonds {
+    background-color: #8BC34A; /* Different color for green bonds */
+}
+
+
+        .invest-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #ffc93c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .invest-btn:hover {
+            background-color: #990505;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #investment-form {
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="submit"] {
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: #555;
+        }
+
+        /* Investment Form Styles */
+        #investment-form {
+            display: none;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            width: 80%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #investment-form h3 {
+            text-align: center;
+            color: #FF9800;
+        }
+
+        #investment-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #investment-form input,
+        #investment-form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+        }
+
+        #investment-form button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #FF9800;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #investment-form button:hover {
+            background-color: #003366;
+        }
+
+        #card-number,
+        #gateway,
+        #Bank-Account {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Types of Bonds</h1>
+
+        <div class="bond-section govt-bonds">
+            <h2>Government Bonds</h2>
+            <p>Government bonds are debt securities issued by the government to support government spending and
+                obligations. These are considered low-risk investments as they are backed by the government's credit.
+            </p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="bond-section corporate-bonds">
+            <h2>Corporate Bonds</h2>
+            <p>Corporate bonds are issued by companies to raise capital for various purposes such as expanding
+                operations, mergers, or acquisitions. These bonds typically offer higher interest rates compared to
+                government bonds but come with higher risk.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="bond-section municipal-bonds">
+            <h2>Municipal Bonds</h2>
+            <p>Municipal bonds are issued by states, cities, or other governmental entities to fund public projects like
+                schools, highways, or infrastructure. Interest earned on municipal bonds is often tax-exempt, making
+                them attractive to investors.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="bond-section convertible-bonds">
+            <h2>Convertible Bonds</h2>
+            <p>Convertible bonds are corporate bonds that can be converted into a predetermined number of the issuing
+                company's equity shares. They offer the benefit of fixed interest payments and potential appreciation of
+                the underlying stock.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="bond-section junk-bonds">
+            <h2>Junk Bonds</h2>
+            <p>Junk bonds, also known as high-yield bonds, are bonds that are rated below investment grade. They offer
+                higher yields to compensate for the higher risk of default. These bonds are issued by companies with
+                weaker financial positions.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="bond-section sovereign-bonds">
+            <h2>Sovereign Bonds</h2>
+            <p>Sovereign bonds are issued by a national government and denominated in a foreign currency. These bonds
+                are used to raise capital in international markets and are subject to currency exchange risk.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="bond-section agency-bonds">
+            <h2>Agency Bonds</h2>
+            <p>Agency bonds are issued by government-sponsored enterprises (GSEs) or federal agencies. These bonds are
+                typically used to support public policy objectives such as affordable housing and agriculture.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="bond-section foreign-bonds">
+            <h2>Foreign Bonds</h2>
+            <p>Foreign bonds are issued in a domestic market by a foreign entity in the domestic market's currency. They
+                are subject to the regulatory and market conditions of the domestic market.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="bond-section green-bonds">
+            <h2>Green Bonds</h2>
+            <p>Green bonds are issued to fund projects that have positive environmental or climate benefits. These bonds
+                support investments in renewable energy, energy efficiency, clean transportation, and sustainable water
+                management.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+
+        <div id="investment-form" class="hidden">
+            <h2>Payment Form</h2>
+            <form>
+
+                <label for="selected-bond">Selected Bond:</label>
+                <input type="text" id="selected-bond" name="selected-bond" readonly>
+                <!-- <label for="corporation-name">Select Corporation:</label>
+                <select id="corporation-name" name="corporation-name" required>
+                    <option value="SBI">State Bank of India (SBI)</option>
+                    <option value="LIC">Life Insurance Corporation of India (LIC)</option>
+                    
+                </select> -->
+
+                <label for="time-period">Time Period:</label>
+                <input type="text" id="time-period" name="time-period" required>
+
+                <label for="Amount">Amount:</label>
+                <input type="number" id="Amount" name="Amount" required>
+
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="Bank-Account">Bank Account</option>
+                    <option value="debit-card">Debit Card</option>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="phonepe">PhonePe</option>
+                    <option value="paytm">Paytm</option>
+                    <option value="google-pay">Google Pay</option>
+                </select>
+
+                <div id="card-number">
+                    <label for="card-number-input">Card Number:</label>
+                    <input type="text" id="card-number-input" name="card-number" required>
+
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required>
+
+                    <label for="expiryDate">Expiry Date (MM/YY):</label>
+                    <input type="text" id="expiryDate" name="expiryDate" required>
+                </div>
+
+                <div id="gateway">
+                    <label for="gateway-id">ID:</label>
+                    <input type="text" id="gateway-id" name="gateway-id" required>
+
+                    <label for="gateway-password">Password:</label>
+                    <input type="password" id="gateway-password" name="gateway-password" required>
+                </div>
+
+                <div id="Bank-Account">
+                    <label for="bank-name">Bank Name:</label>
+                    <input type="text" id="bank-name" name="bank-name" required>
+
+                    <label for="account-number">Account Number:</label>
+                    <input type="number" id="account-number" name="account-number" required>
+
+                    <label for="ifsc">IFSC:</label>
+                    <input type="text" id="ifsc" name="ifsc" required>
+
+                    <label for="mpin">MPIN:</label>
+                    <input type="password" id="mpin" name="mpin" required>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('investNowBtn').addEventListener('click', function () {
+            document.getElementById('investment-form').style.display = 'block';
+            document.getElementById('investment-form').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('payment-method').addEventListener('change', function () {
+            var cardNumber = document.getElementById('card-number');
+            var gateway = document.getElementById('gateway');
+            var bankAccount = document.getElementById('Bank-Account');
+
+            cardNumber.style.display = 'none';
+            gateway.style.display = 'none';
+            bankAccount.style.display = 'none';
+
+            if (this.value === 'debit-card' || this.value === 'credit-card') {
+                cardNumber.style.display = 'block';
+            } else if (this.value === 'phonepe' || this.value === 'paytm' || this.value === 'google-pay') {
+                gateway.style.display = 'block';
+            } else if (this.value === 'Bank-Account') {
+                bankAccount.style.display = 'block';
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const investButtons = document.querySelectorAll('.invest-btn');
+            const investmentForm = document.getElementById('investment-form');
+
+            investButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Show the investment form
+                    investmentForm.classList.remove('hidden');
+
+                    // Scroll to the investment form
+                    investmentForm.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Select the investment form
+            const investmentForm = document.getElementById('investment-form');
+            // Select the input field for the selected bond
+            const selectedBondInput = document.getElementById('selected-bond');
+
+            // Add click event listener to each 'invest-btn' element
+            const investButtons = document.querySelectorAll('.invest-btn');
+            investButtons.forEach(button => {
+                button.addEventListener('click', openInvestmentForm);
+            });
+
+            // Function to open the investment form and populate the selected bond
+            function openInvestmentForm() {
+                // Show the investment form by removing the 'hidden' class
+                investmentForm.style.display = 'block';
+
+                // Scroll to the investment form smoothly
+                investmentForm.scrollIntoView({ behavior: 'smooth' });
+
+                // Extract the bond name associated with the clicked button
+                const bondName = this.parentNode.querySelector('h2').textContent.trim();
+                // Set the value of the selected bond input field
+                selectedBondInput.value = bondName;
+            }
+        });
+    </script>
+</body>
+
+</html>

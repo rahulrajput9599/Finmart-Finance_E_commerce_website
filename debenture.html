@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debentures Information</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .info-section,
+        #investment-form {
+            background: #fff;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-section {
+            background: linear-gradient(to bottom right, #ffecb3, #ffffff);
+            border: 1px solid #ffd54f;
+        }
+
+        .info-section h1 {
+            color: #ff5722;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .info-section h2 {
+            color: #ff9800;
+            margin-top: 0;
+            font-size: 2em;
+            border-bottom: 2px solid #ffcc80;
+            padding-bottom: 10px;
+        }
+
+        .info-section h3 {
+            color: #ff7043;
+            margin-top: 20px;
+            font-size: 1.5em;
+            border-bottom: 1px solid #ffab91;
+            padding-bottom: 5px;
+        }
+
+        .info-section p,
+        .info-section ul {
+            line-height: 1.6;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-section ul {
+            padding-left: 20px;
+        }
+
+        .info-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .info-section img {
+            max-width: 100%;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff5722, #ff7043);
+            color: #fff;
+            padding: 15px 30px;
+            margin: 20px 0;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+            text-align: center;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #ff7043, #ff5722);
+        }
+
+        #investment-form {
+            background: linear-gradient(to bottom right, #b2dfdb, #ffffff);
+            border: 1px solid #80cbc4;
+        }
+
+        #investment-form h2 {
+            color: #00796b;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background: #00796b;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: #004d40;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #card-number,
+        #gateway,
+        #Bank-Account {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="info-section">
+            <h1>Welcome to Debentures</h1>
+            <div class="info-content">
+                <h2>What are Debentures?</h2>
+                <p>Debentures are a type of debt instrument that are not secured by physical assets or collateral. They
+                    are
+                    backed only by the general creditworthiness and reputation of the issuer. Debentures are usually
+                    issued
+                    by large corporations and governments to raise funds for various purposes.</p>
+                <h3>Types of Debentures</h3>
+                <ul>
+                    <li><strong>Convertible Debentures:</strong> These can be converted into equity shares of the
+                        issuing
+                        company after a certain period.</li>
+                    <li><strong>Non-Convertible Debentures:</strong> These cannot be converted into equity shares and
+                        usually carry a higher rate of interest.</li>
+                    <li><strong>Secured Debentures:</strong> These are backed by a charge on the assets of the company,
+                        providing greater security to investors.</li>
+                    <li><strong>Unsecured Debentures:</strong> These are not backed by any assets and carry a higher
+                        risk
+                        compared to secured debentures.</li>
+                </ul>
+                <img src="https://www.deskera.com/blog/content/images/2021/03/Screen-Shot-2021-03-04-at-12.30.32-AM.png"
+                    alt="Debenture Image">
+            </div>
+            <button id="investNowBtn">Buy Debenture</button>
+        </div>
+        <div id="investment-form-container">
+            <div id="investment-form" class="hidden">
+                <h2>Payment Form</h2>
+                <form>
+                    <label for="corporation-name">Select Corporation:</label>
+                    <select id="corporation-name" name="corporation-name" required>
+                        <option value="SBI">State Bank of India (SBI)</option>
+                        <option value="LIC">Life Insurance Corporation of India (LIC)</option>
+                        <option value="ONGC">Oil and Natural Gas Corporation (ONGC)</option>
+                        <option value="Indian Railways">Indian Railways</option>
+                        <option value="NTPC">National Thermal Power Corporation (NTPC)</option>
+                        <option value="BHEL">Bharat Heavy Electricals Limited (BHEL)</option>
+                        <option value="GAIL">Gas Authority of India Limited (GAIL)</option>
+                        <option value="SAIL">Steel Authority of India Limited (SAIL)</option>
+                        <option value="Coal India">Coal India Limited</option>
+                        <option value="BPCL">Bharat Petroleum Corporation Limited (BPCL)</option>
+                        <option value="Reliance">Reliance Industries</option>
+                        <option value="Tata">Tata Group</option>
+                        <option value="Infosys">Infosys</option>
+                        <option value="HDFC">HDFC Bank</option>
+                        <option value="Wipro">Wipro</option>
+                        <option value="Adani">Adani Group</option>
+                        <option value="ICICI">ICICI Bank</option>
+                        <option value="Mahindra">Mahindra Group</option>
+                        <option value="Larsen & Toubro">Larsen & Toubro</option>
+                        <option value="Bharti Airtel">Bharti Airtel</option>
+                    </select>
+
+                    <label for="plan">Choose Debenture:</label>
+                    <select id="plan" name="plan" required>
+                        <option value="Convertible Debentures">Convertible Debentures</option>
+                        <option value="Non-Convertible Debentures">Non-Convertible Debentures</option>
+                        <option value="Secured Debentures">Secured Debentures</option>
+                        <option value="Unsecured Debentures">Unsecured Debentures</option>
+                    </select>
+
+                    <label for="time-period">Time Period:</label>
+                    <input type="text" id="time-period" name="time-period" required>
+
+                    <label for="Amount">Amount:</label>
+                    <input type="number" id="Amount" name="Amount" required>
+
+                    <label for="payment-method">Payment Method:</label>
+                    <select id="payment-method" name="payment-method" required>
+                        <option value="Bank-Account">Bank-Account</option>
+                        <option value="debit-card">Debit Card</option>
+                        <option value="credit-card">Credit Card</option>
+                        <option value="phonepe">PhonePe</option>
+                        <option value="paytm">Paytm</option>
+                        <option value="google-pay">Google Pay</option>
+                    </select>
+
+                    <div id="card-number">
+                        <label for="card-number-input">Card Number:</label>
+                        <input type="text" id="card-number-input" name="card-number" required>
+
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" required>
+
+                        <label for="expiryDate">Expiry Date (MM/YY):</label>
+                        <input type="text" id="expiryDate" name="expiryDate" required>
+                    </div>
+
+                    <div id="gateway">
+                        <label for="gateway-id">ID:</label>
+                        <input type="text" id="gateway-id" name="gateway-id" required>
+
+                        <label for="gateway-password">Password:</label>
+                        <input type="password" id="gateway-password" name="gateway-password" required>
+                    </div>
+
+                    <div id="Bank-Account">
+                        <label for="bank-name">Bank Name:</label>
+                        <input type="text" id="bank-name" name="bank-name" required>
+
+                        <label for="account-number">Account Number:</label>
+                        <input type="number" id="account-number" name="account-number" required>
+
+                        <label for="ifsc">IFSC:</label>
+                        <input type="text" id="ifsc" name="ifsc" required>
+
+                        <label for="mpin">MPIN:</label>
+                        <input type="password" id="mpin" name="mpin" required>
+                    </div>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('investNowBtn').addEventListener('click', function () {
+            document.getElementById('investment-form').classList.toggle('hidden');
+            document.getElementById('investment-form').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('payment-method').addEventListener('change', function () {
+            var cardNumber = document.getElementById('card-number');
+            var gateway = document.getElementById('gateway');
+            var bankAccount = document.getElementById('Bank-Account');
+
+            cardNumber.style.display = 'none';
+            gateway.style.display = 'none';
+            bankAccount.style.display = 'none';
+
+            if (this.value === 'debit-card' || this.value === 'credit-card') {
+                cardNumber.style.display = 'block';
+            } else if (this.value === 'phonepe' || this.value === 'paytm' || this.value === 'google-pay') {
+                gateway.style.display = 'block';
+            } else if (this.value === 'Bank-Account') {
+                bankAccount.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>

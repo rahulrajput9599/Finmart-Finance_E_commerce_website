@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pension Plan Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #FF5722;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #FF5722;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .comparison-table th {
+            background-color: #f2f2f2;
+        }
+
+        
+      
+    .invest-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #FF5722;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 11px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        .invest-btn:hover {
+            background-color: #004d40;
+        }
+
+         /* Investment Form Styles */
+   #investment-form {
+    display: none;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    width: 80%; /* Add this line to set the width of the form */
+    max-width: 600px; /* Add this line to set the maximum width of the form */
+    margin-left: auto; /* Add this line to center the form horizontally */
+    margin-right: auto; /* Add this line to center the form horizontally */
+}
+
+        #investment-form h3 {
+            text-align: center;
+            color: #FF5722;
+        }
+
+        #investment-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #investment-form input,
+        #investment-form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+        }
+
+        #investment-form button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #FF5722;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #investment-form button:hover {
+            background-color: #003366;
+        }
+
+        
+    #card-number,
+    #gateway,
+    #Bank-Account {
+        display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Pension Plan Information</h1>
+    </header>
+    <section>
+        <h2>What is a Pension Plan?</h2>
+        <p>A pension plan is a retirement plan that provides a specified monthly income to retired employees for the
+            rest of their lives.</p>
+    </section>
+    <section>
+        <h2>Comparison of Different Pension Plans</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Plan Type</th>
+                    <th>Eligibility</th>
+                    <th>Contribution Structure</th>
+                    <th>Benefit Payment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Defined Benefit Pension Plan</td>
+                    <td>Employer-sponsored; often for long-term employees</td>
+                    <td>Employer-funded; based on salary and years of service</td>
+                    <td>Guaranteed monthly income for life</td>
+                </tr>
+                <tr>
+                    <td>Defined Contribution Pension Plan</td>
+                    <td>Employer-sponsored; often for all employees</td>
+                    <td>Employee-funded or matched contributions</td>
+                    <td>Income based on contributions and investment returns; not guaranteed</td>
+                </tr>
+                <tr>
+                    <td>Government Pension Plan</td>
+                    <td>For government employees (e.g., Social Security in the US)</td>
+                    <td>Funded through taxes or employee contributions</td>
+                    <td>Guaranteed monthly income or benefits</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <h2>Products and Services</h2>
+        <p>Our financial institution offers a range of products and services to help you manage your pension plan
+            effectively:</p>
+        <ul>
+            <li>Pension planning and consulting</li>
+            <li>Investment management services</li>
+            <li>Retirement income strategies</li>
+            <li>Beneficiary planning</li>
+        </ul>
+    </section>
+    <footer style="text-align: center;">
+        <div class="invest-btn" id="investNowBtn">Buy Plan</div>
+    </footer>
+    
+    <div id="investment-form">
+        <h3>Auto-Insurance Form</h3>
+        <form>
+            <!-- <label for="bank-account">Bank Account Number:</label>
+                    <input type="text" id="bank-account" name="bank-account" required>
+    
+                    <label for="ifsc">IFSC Code:</label>
+                    <input type="text" id="ifsc" name="ifsc" required> -->
+    
+            <label for="plan">Choose Plan:</label>
+            <select id="plan" name="plan" required>
+                <option value="basic">Basic</option>
+                <option value="Third Party">Third Party</option>
+                <option value="Collision Coverage">Collision Coverage</option>
+                <option value="Liability Coverage">Liability Coverage</option>
+                <option value="Personal Injury Protection">Personal Injury Protection</option>
+                <option value="Roadside Assistance">Roadside Assistance</option>
+                <option value="Uninsured/Underinsured Motorist Coverage">Uninsured/Underinsured Motorist Coverage
+                </option>
+                <option value="comprehensive">Comprehensive</option>
+            </select>
+    
+    
+    
+        <label for="time-period">Time Period:</label>
+        <input type="text" id="time-period" name="time-period" required>
+        
+        <label for="Amount">Amount:</label>
+        <input type="number" id="Amount" name="Amount" required>
+        
+        <label for="payment-method">Payment Method:</label>
+        <select id="payment-method" name="payment-method" required>
+            <option value="bank-account">Bank Account</option>
+            <option value="debit-card">Debit Card</option>
+            <option value="credit-card">Credit Card</option>
+            <option value="phonepe">PhonePe</option>
+            <option value="paytm">Paytm</option>
+            <option value="google-pay">Google Pay</option>
+        </select>
+        
+        <div id="card-number">
+            <label for="card-number-input">Card Number:</label>
+            <input type="text" id="card-number-input" name="card-number">
+            <label for="card-number-input">CVV:</label>
+            <input type="text" id="card-number-input" name="card-number">
+            <label for="expiryDate">Expiry Date (MM/YY):</label>
+            <input type="text" id="expiryDate" name="expiryDate" required>
+        </div>
+        
+        <div id="gateway">
+            <label for="card-number-input">ID:</label>
+            <input type="text" id="card-number-input" name="card-number">
+            <label for="card-number-input">Password:</label>
+            <input type="text" id="card-number-input" name="card-number">
+        </div>
+        
+        <div id="Bank-Account">
+            <label for="card-number-input">Bank Name:</label>
+            <input type="text" id="card-number-input" name="card-number">
+            <label for="card-number-input">Account Number:</label>
+            <input type="number" id="card-number-input" name="card-number">
+            <label for="card-number-input">IFSC:</label>
+            <input type="text" id="card-number-input" name="card-number">
+            <label for="card-number-input">MPIN:</label>
+            <input type="text" id="card-number-input" name="card-number">
+        </div>
+        
+        <button type="submit">Submit</button>
+        </form>
+        </div>
+        </main>
+
+    
+    <script>
+       document.getElementById('investNowBtn').addEventListener('click', function () {
+            document.getElementById('investment-form').style.display = 'block';
+            document.getElementById('investment-form').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.querySelectorAll('.invest-btn').forEach((button) => {
+            button.addEventListener('click', () => {
+                document.getElementById('investment-form').style.display = 'block';
+                document.getElementById('investment-form').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        document.getElementById('payment-method').addEventListener('change', function () {
+            var cardNumberDiv = document.getElementById('card-number');
+            var gatewayDiv = document.getElementById('gateway');
+            var bankAccountDiv = document.getElementById('Bank-Account');
+
+            cardNumberDiv.style.display = 'none';
+            gatewayDiv.style.display = 'none';
+            bankAccountDiv.style.display = 'none';
+
+            switch (this.value) {
+                case 'debit-card':
+                case 'credit-card':
+                    cardNumberDiv.style.display = 'block';
+                    break;
+                case 'phonepe':
+                case 'paytm':
+                case 'google-pay':
+                    gatewayDiv.style.display = 'block';
+                    break;
+                case 'bank-account':
+                    bankAccountDiv.style.display = 'block';
+                    break;
+            }
+        });
+    </script>
+    </body>
+    
+    </html>

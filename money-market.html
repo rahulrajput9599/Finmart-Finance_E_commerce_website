@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finm@rt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #333333;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        p {
+            text-align: justify;
+            color: #666666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .basic-info {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #2196F3;
+        }
+
+        label,
+        input,
+        select {
+            display: block;
+            margin-bottom: 15px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:hover,
+        input[type="email"]:hover,
+        input[type="number"]:hover,
+        select:hover {
+            border-color: #2196F3;
+        }
+
+        input[type="submit"] {
+            background-color: #2196F3;
+            color: #ffffff;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0d8bf1;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to Finm@rt</h1>
+        <div class="basic-info">
+            <p>The money market is a section of the financial market in which financial instruments with high liquidity
+                and short-term maturities are traded. It includes various types of tools such as:</p>
+            <ul>
+                <li>Treasury bills</li>
+                <li>Commercial paper</li>
+                <li>Repurchase agreements (repos)</li>
+                <li>Certificates of deposit (CDs)</li>
+            </ul>
+            <p>Customers can invest in money market instruments through their bank accounts.</p>
+        </div>
+
+        <!-- Form for purchasing money market instruments -->
+        <form id="moneyMarketPurchaseForm">
+            <h2>Buy Money Market Instrument</h2>
+            <label for="instrumentType">Select Instrument Type:</label>
+            <select id="instrumentType" name="instrumentType" required>
+                <option value="">Select</option>
+                <option value="Treasury Bills">Treasury Bills</option>
+                <option value="Commercial Paper">Commercial Paper</option>
+                <option value="Repurchase Agreements">Repurchase Agreements</option>
+                <option value="Certificates of Deposit">Certificates of Deposit</option>
+            </select>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="bankName">Bank Name:</label>
+            <input type="text" id="bankName" name="bankName" required>
+            <label for="accountNumber">Account Number:</label>
+            <input type="text" id="accountNumber" name="accountNumber" required>
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+            <input type="submit" value="Purchase">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("moneyMarketPurchaseForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            console.log(data);
+            // Additional code to handle form submission, such as sending the data to a server
+            // Reset form fields after submission
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>

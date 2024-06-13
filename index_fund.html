@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Funds</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://example.com/your-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgba(255, 30, 38, 0.8);
+            /* Semi-transparent background */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Semi-transparent background */
+            border-radius: 18px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 18px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #ee214a;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .info-box {
+            background-color: #e5f3ff;
+            border-left: 5px solid #1E90FF;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-box p {
+            margin: 0;
+        }
+
+        .invest-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #ee214a;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .invest-btn:hover {
+            background-color: #004d40;
+        }
+
+        /* Investment Form Styles */
+        #investment-form {
+            display: none;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            width: 80%;
+            /* Add this line to set the width of the form */
+            max-width: 600px;
+            /* Add this line to set the maximum width of the form */
+            margin-left: auto;
+            /* Add this line to center the form horizontally */
+            margin-right: auto;
+            /* Add this line to center the form horizontally */
+        }
+
+        #investment-form h3 {
+            text-align: center;
+            color: #ee214a;
+        }
+
+        #investment-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #investment-form input,
+        #investment-form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+        }
+
+        #investment-form button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #ee214a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #investment-form button:hover {
+            background-color: #003366;
+        }
+
+
+        #card-number,
+        #gateway,
+        #Bank-Account {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Index Funds</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>What are Index Funds?</h2>
+            <div class="info-box">
+                <p>Index funds are a type of mutual fund or exchange-traded fund (ETF) designed to replicate the
+                    performance of a specific index, such as the S&P 500. These funds aim to match the performance of
+                    the market index by holding all or a representative sample of the securities in the index. Index
+                    funds offer a low-cost, diversified investment option suitable for long-term investors seeking
+                    steady growth.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Index Fund Data</h2>
+            <table id="indexFundData">
+                <thead>
+                    <tr>
+                        <th>Fund Name</th>
+                        <th>Year-to-Date Return</th>
+                        <th>1-Year Return</th>
+                        <th>3-Year Return</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be dynamically added here using JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Index Fund Products & Services</h2>
+            <ul id="indexFundProducts">
+                <!-- Products and services will be dynamically added here using JavaScript -->
+            </ul>
+        </section>
+
+        <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </footer>
+
+        <div id="investment-form">
+            <h3>Balance-Fund Form</h3>
+            <form>
+                <!-- <label for="bank-account">Bank Account Number:</label>
+                    <input type="text" id="bank-account" name="bank-account" required>
+    
+                    <label for="ifsc">IFSC Code:</label>
+                    <input type="text" id="ifsc" name="ifsc" required> -->
+
+                <label for="plan">Choose Plan:</label>
+                <select id="plan" name="plan" required>
+                    <option value="basic">Nifty 50 Index Fund</option>
+                    <option value="Third Party">Sensex Index Fund</option>
+                    <option value="Collision Coverage">Nifty Next 50 Index Fund</option>
+                    <option value="Liability Coverage">Nifty Bank Index Fund</option>
+                    <option value="Personal Injury Protection">Nifty Midcap 100 Index Fund</option>
+                    <option value="Roadside Assistance">Nifty Smallcap 100 Index Fund</option>
+                    <option value="Uninsured/Underinsured Motorist Coverage">Nifty 500 Index Fund</option>
+                    <option value="comprehensive">Nifty 100 Equal Weight Index Fund</option>
+                    <option value="comprehensive">Nifty Infrastructure Index Fund</option>
+                    <option value="comprehensive">Nifty IT Index Fund</option>
+                </select>
+
+
+
+                <label for="time-period">Time Period:</label>
+                <input type="text" id="time-period" name="time-period" required>
+
+                <label for="Amount">Amount:</label>
+                <input type="number" id="Amount" name="Amount" required>
+
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="bank-account">Bank Account</option>
+                    <option value="debit-card">Debit Card</option>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="phonepe">PhonePe</option>
+                    <option value="paytm">Paytm</option>
+                    <option value="google-pay">Google Pay</option>
+                </select>
+
+                <div id="card-number">
+                    <label for="card-number-input">Card Number:</label>
+                    <input type="text" id="card-number-input" name="card-number">
+                    <label for="card-number-input">CVV:</label>
+                    <input type="text" id="card-number-input" name="card-number">
+                    <label for="expiryDate">Expiry Date (MM/YY):</label>
+                    <input type="text" id="expiryDate" name="expiryDate" required>
+                </div>
+
+                <div id="gateway">
+                    <label for="card-number-input">ID:</label>
+                    <input type="text" id="card-number-input" name="card-number">
+                    <label for="card-number-input">Password:</label>
+                    <input type="text" id="card-number-input" name="card-number">
+                </div>
+
+                <div id="Bank-Account">
+                    <label for="card-number-input">Bank Name:</label>
+                    <input type="text" id="card-number-input" name="card-number">
+                    <label for="card-number-input">Account Number:</label>
+                    <input type="number" id="card-number-input" name="card-number">
+                    <label for="card-number-input">IFSC:</label>
+                    <input type="text" id="card-number-input" name="card-number">
+                    <label for="card-number-input">MPIN:</label>
+                    <input type="text" id="card-number-input" name="card-number">
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('investNowBtn').addEventListener('click', function () {
+            document.getElementById('investment-form').style.display = 'block';
+            document.getElementById('investment-form').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.querySelectorAll('.invest-btn').forEach((button) => {
+            button.addEventListener('click', () => {
+                document.getElementById('investment-form').style.display = 'block';
+                document.getElementById('investment-form').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        document.getElementById('payment-method').addEventListener('change', function () {
+            var cardNumberDiv = document.getElementById('card-number');
+            var gatewayDiv = document.getElementById('gateway');
+            var bankAccountDiv = document.getElementById('Bank-Account');
+
+            cardNumberDiv.style.display = 'none';
+            gatewayDiv.style.display = 'none';
+            bankAccountDiv.style.display = 'none';
+
+            switch (this.value) {
+                case 'debit-card':
+                case 'credit-card':
+                    cardNumberDiv.style.display = 'block';
+                    break;
+                case 'phonepe':
+                case 'paytm':
+                case 'google-pay':
+                    gatewayDiv.style.display = 'block';
+                    break;
+                case 'bank-account':
+                    bankAccountDiv.style.display = 'block';
+                    break;
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Array of balance fund product names
+            var indexFundProducts = [
+                "Nifty 50 Index Fund",
+                "Sensex Index Fund",
+                "Nifty Next 50 Index Fund",
+                "Nifty Bank Index Fund",
+                "Nifty Midcap 100 Index Fund",
+                "Nifty Smallcap 100 Index Fund",
+                "Nifty 100 Equal Weight Index Fund",
+                "Nifty 500 Index Fund",
+                "Nifty Infrastructure Index Fund",
+                "Nifty IT Index Fund",
+            ];
+
+            // Get the <ul> element by its id
+            var ulElement = document.getElementById('indexFundProducts');
+
+            // Loop through the balance fund product names array and create <li> elements for each item
+            indexFundProducts.forEach(function (item) {
+                // Create a new <li> element
+                var liElement = document.createElement('li');
+                // Set the text content of the <li> element to the current item
+                liElement.textContent = item;
+                // Append the <li> element to the <ul> element
+                ulElement.appendChild(liElement);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var indexFunds = [
+                { name: "Nifty 50 Index Fund", ytdReturn: "9%", oneYearReturn: "14%", threeYearReturn: "22%" },
+                { name: "Sensex Index Fund", ytdReturn: "8%", oneYearReturn: "12%", threeYearReturn: "20%" },
+                { name: "Nifty Next 50 Index Fund", ytdReturn: "10%", oneYearReturn: "16%", threeYearReturn: "25%" },
+                { name: "Nifty Bank Index Fund", ytdReturn: "7.5%", oneYearReturn: "11.5%", threeYearReturn: "19.5%" },
+                { name: "Nifty Midcap 100 Index Fund", ytdReturn: "11%", oneYearReturn: "17%", threeYearReturn: "27%" },
+                { name: "Nifty Smallcap 100 Index Fund", ytdReturn: "12%", oneYearReturn: "18%", threeYearReturn: "30%" }
+            ];
+
+            var tbody = document.getElementById('indexFundData');
+
+            indexFunds.forEach(function (fund) {
+                var row = document.createElement('tr');
+                var nameCell = document.createElement('td');
+                var ytdReturnCell = document.createElement('td');
+                var oneYearReturnCell = document.createElement('td');
+                var threeYearReturnCell = document.createElement('td');
+
+                nameCell.textContent = fund.name;
+                ytdReturnCell.textContent = fund.ytdReturn;
+                oneYearReturnCell.textContent = fund.oneYearReturn;
+                threeYearReturnCell.textContent = fund.threeYearReturn;
+
+                row.appendChild(nameCell);
+                row.appendChild(ytdReturnCell);
+                row.appendChild(oneYearReturnCell);
+                row.appendChild(threeYearReturnCell);
+
+                tbody.appendChild(row);
+            });
+        });
+
+    </script>
+</body>
+
+</html>

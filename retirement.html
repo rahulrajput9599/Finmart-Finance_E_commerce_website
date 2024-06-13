@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Retirement Planning</title>
+    <style>
+    
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl-QpzbPFWGZIp4XcoQpyYwOSEu1Anw9PndQ&s');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333; /* Text color */
+}
+
+
+
+
+        header {
+            background-color: #F9C22E;
+            /* Header background color */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            background-color: #fff;
+            /* Navigation background color */
+            padding: 10px;
+            text-align: center;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav a {
+            color: #333;
+            /* Navigation link color */
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+            /* Smooth transition for link hover */
+        }
+
+        nav a:hover {
+            color: #F9C22E;
+            /* Hover color for navigation links */
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        section {
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            /* Section background color */
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            /* Smooth transition for section hover */
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            /* Lift section on hover */
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            /* Rounded corners for images */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            /* Shadow effect for images */
+            transition: transform 0.3s;
+            /* Smooth transition for image hover */
+        }
+
+        .product-image:hover {
+            transform: scale(1.05);
+            /* Scale up image on hover */
+        }
+
+        .start-planning-btn {
+            background-color: #FF5722;
+            /* Button background color */
+            border: none;
+            color: #fff;
+            /* Button text color */
+            padding: 10px 20px;
+            border-radius: 1.75rem;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            /* Smooth transition for button hover */
+        }
+
+        .start-planning-btn:hover {
+            background-color: #E64A19;
+            /* Darker shade on button hover */
+        }
+
+        footer {
+            background-color: #F9C22E;
+            color: #fff;
+            padding: 0.2px;
+             height: 20px; 
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Retirement Planning</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="401k_plan.html">401(k) Plan</a></li>
+            <li><a href="ira_plan.html">IRA Plan</a></li>
+            <li><a href="pension_plan.html">Pension Plan</a></li>
+            <li><a href="annuity_plan.html">Annuity Plan</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="401k-plan">
+            <h2>401(k) Plan</h2>
+            <img src="https://www.doublebaymp.com/wp-content/uploads/2014/04/bigstock-Your-K-Retirement-Fund-49171730.jpg"
+                alt="401(k) Plan" class="product-image">
+            <p>Save for retirement with tax-advantaged contributions and investment options.</p>
+            <a href="401k_plan.html">
+                <button class="start-planning-btn">Plan for Tomorrow</button>
+            </a>
+        </section>
+
+        <section id="ira-plan">
+            <h2>IRA Plan</h2>
+            <img src="https://miro.medium.com/v2/resize:fit:730/1*yr9-otjkBOhtohsFH4AQiQ.jpeg" alt="IRA Plan"
+                class="product-image">
+            <p>Grow your retirement savings with an Individual Retirement Account tailored to your needs.</p>
+            <a href="ira_plan.html">
+                <button class="start-planning-btn">Invest in Your Future</button>
+            </a>
+        </section>
+
+        <section id="pension-plan">
+            <h2>Pension Plan</h2>
+            <img src="https://www.probusinsurance.com/wp-content/uploads/2022/03/pension-plan.png" alt="Pension Plan"
+                class="product-image">
+            <p>Receive regular income during retirement with a company-sponsored pension plan.</p>
+            <a href="pension_plan.html">
+                <button class="start-planning-btn">Guarantee Your Tomorrow</button>
+            </a>
+        </section>
+
+        <section id="annuity-plan">
+            <h2>Annuity Plan</h2>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7GrAr2L8w4b29OraiZI8zVA9HKlQj9TMEEEoIPDu9Ew&s"
+                alt="Annuity Plan" class="product-image">
+            <p>Secure guaranteed income for life with an annuity investment for retirement.</p>
+            <a href="annuity_plan.html">
+                <button class="start-planning-btn">Secure Your Retirement Lifestyle</button>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <!-- <p>&copy; 2024 Retirement Planning. All rights reserved.</p> -->
+    </footer>
+
+    <script>
+        // Add event listeners to the "Start Planning" buttons
+        const planningButtons = document.querySelectorAll('.start-planning-btn');
+        planningButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // alert('Thank you for your interest! Let\'s start planning for your retirement.');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Account - FinMart</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f8fb;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 18px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #34495e;
+        }
+
+        .content {
+            margin: 20px 0;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 18px;
+        }
+
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            border-radius: 15px;
+            margin-top: 10px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .btn-container button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to FinMart</h1>
+        <!-- <nav>
+            <a href="#home" onclick="showSection('home')">Home</a>
+            <a href="#login" onclick="showSection('login')">Login</a>
+            <a href="#create-account" onclick="showSection('create-account')">Create Account</a>
+        </nav> -->
+    </header>
+
+    <div class="container" id="home">
+        <h2>About FinMart</h2>
+        <div class="content">
+            <p>FinMart is dedicated to providing top-notch financial services to our customers. With a focus on customer
+                satisfaction, we offer a variety of financial products tailored to meet your needs. Our savings account
+                is one of the best in the market, offering competitive interest rates and flexible terms.</p>
+        </div>
+        <h2>Why Choose FinMart Savings Account?</h2>
+        <div class="content">
+            <ul>
+                <li>High interest rates</li>
+                <li>No hidden fees</li>
+                <li>Easy access to your funds</li>
+                <li>Online and mobile banking options</li>
+                <li>24/7 customer support</li>
+            </ul>
+        </div>
+        <h2>Compare Interest Rates</h2>
+        <table>
+            <tr>
+                <th>Firm</th>
+                <th>Interest Rate</th>
+            </tr>
+            <tr>
+                <td>FinMart</td>
+                <td>3.5%</td>
+            </tr>
+            <tr>
+                <td>Bank A</td>
+                <td>3.0%</td>
+            </tr>
+            <tr>
+                <td>Bank B</td>
+                <td>2.8%</td>
+            </tr>
+            <tr>
+                <td>Bank C</td>
+                <td>2.5%</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="btn-container">
+        <button onclick="showForm('login')">Login</button>
+        <button onclick="showForm('create-account')">Create Account</button>
+    </div>
+
+    <div class="container hidden" id="login">
+        <h2>Login to Your Savings Account</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="container hidden" id="create-account">
+        <h2>Create a New Savings Account</h2>
+        <form id="createAccountForm">
+            <label for="newUsername">Username:</label>
+            <input type="text" id="newUsername" name="newUsername" required>
+
+            <label for="newPassword">Password:</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="submit">Create Account</button>
+        </form>
+    </div>
+
+    <!-- <footer>
+        <p>&copy; 2024 FinMart. All rights reserved.</p>
+    </footer> -->
+
+    <script>
+        function showForm(formId) {
+            document.getElementById("login").style.display = "none";
+            document.getElementById("create-account").style.display = "none";
+            document.getElementById(formId).style.display = "block";
+            document.getElementById(formId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const loginForm = document.getElementById('loginForm');
+        //     const createAccountForm = document.getElementById('createAccountForm');
+
+        //     loginForm.addEventListener('submit', function (event) {
+        //         event.preventDefault();
+        //         const username = document.getElementById('username').value;
+        //         const password = document.getElementById('password').value;
+        //         alert(`Logged in as: ${username}`);
+        //     });
+
+        //     createAccountForm.addEventListener('submit', function (event) {
+        //         event.preventDefault();
+        //         const newUsername = document.getElementById('newUsername').value;
+        //         const newPassword = document.getElementById('newPassword').value;
+        //         const email = document.getElementById('email').value;
+        //         alert(`Account created for: ${newUsername} with email: ${email}`);
+        //     });
+
+        // function showSection(sectionId) {
+        //     document.querySelectorAll('.container').forEach(section => {
+        //         section.classList.add('hidden');
+        //     });
+        //     document.getElementById(sectionId).classList.remove('hidden');
+        // }
+    </script>
+</body>
+
+</html>

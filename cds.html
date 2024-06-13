@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinMart - Certificate of Deposits</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #4b0082;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .cd-info {
+            padding: 20px;
+            background-color: #faf0e6;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .cd-info h3 {
+            margin-top: 0;
+        }
+
+        .cd-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cd-table th,
+        .cd-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .cd-table th {
+            background-color: #ff7f50;
+            color: #ffffff;
+        }
+
+        .cd-table tr:nth-child(even) {
+            background-color: #ffebcd;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #ff4500;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #dc143c;
+        }
+
+        form {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #ff4500;
+        }
+
+        .button-container form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #ff4500;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #dc143c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to FinMart's Certificate of Deposits (CDs)</h1>
+        <p>At FinMart, we provide a variety of Certificate of Deposit (CD) options to help you save and grow your money.
+            Below is a comparison of our available CDs:</p>
+
+        <div class="cd-info">
+            <h3>CD Options</h3>
+            <table class="cd-table">
+                <thead>
+                    <tr>
+                        <th>CD Term</th>
+                        <th>Interest Rate</th>
+                        <th>Minimum Deposit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>6 Months</td>
+                        <td>2.25%</td>
+                        <td>$1,000</td>
+                    </tr>
+                    <tr>
+                        <td>1 Year</td>
+                        <td>2.50%</td>
+                        <td>$1,000</td>
+                    </tr>
+                    <tr>
+                        <td>3 Years</td>
+                        <td>2.75%</td>
+                        <td>$1,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>You can purchase any of these CDs online or visit one of our branches.</p>
+
+        <div class="button-container">
+            <button class="button" onclick="showPurchaseForm()">Purchase CD</button>
+        </div>
+        
+        <form id="purchaseForm" style="display: none;">
+            <h2>Purchase Certificate of Deposit</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        
+            <label for="accountNumber">Account Number:</label>
+            <input type="text" id="accountNumber" name="accountNumber" required>
+        
+            <label for="ifsc">IFSC Code:</label>
+            <input type="text" id="ifsc" name="ifsc" required>
+        
+            <label for="depositAmount">Deposit Amount:</label>
+            <input type="number" id="depositAmount" name="depositAmount" required>
+        
+            <label for="cdPeriod">CD Period Plan:</label>
+            <select id="cdPeriod" name="cdPeriod" required>
+                <option value="6 Months">6 Months</option>
+                <option value="1 Year">1 Year</option>
+                <option value="3 Years">3 Years</option>
+            </select>
+        
+            <div class="button-container">
+                <button type="submit" class="button">Purchase CD</button>
+            </div>
+        </form>
+        
+        <script>
+            function showPurchaseForm() {
+                document.getElementById('purchaseForm').style.display = 'block';
+                // window.scrollTo(0, document.body.scrollHeight);
+            }
+            function showPurchaseForm() {
+                    const purchaseForm = document.getElementById('purchaseForm');
+                    purchaseForm.style.display = 'block';
+                    const scrollHeight = purchaseForm.offsetTop;
+                    window.scroll({
+                        top: scrollHeight,
+                        behavior: 'smooth'
+                    });
+                }
+        </script>
+        </body>
+        </html>

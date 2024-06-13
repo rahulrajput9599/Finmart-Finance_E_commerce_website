@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance Funds</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://example.com/your-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgba(255, 152, 0, 0.8);
+            /* Semi-transparent background */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Semi-transparent background */
+            border-radius: 18px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 18px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #FF9800;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .info-box {
+            background-color: #ffe0b2;
+            border-left: 5px solid #FF9800;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-box p {
+            margin: 0;
+        }
+
+      .invest-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color:  #FF9800;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .invest-btn:hover {
+            background-color: #004d40;
+        }
+
+         /* Investment Form Styles */
+   #investment-form {
+    display: none;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    width: 80%; /* Add this line to set the width of the form */
+    max-width: 600px; /* Add this line to set the maximum width of the form */
+    margin-left: auto; /* Add this line to center the form horizontally */
+    margin-right: auto; /* Add this line to center the form horizontally */
+}
+
+        #investment-form h3 {
+            text-align: center;
+            color: #FF9800;
+        }
+
+        #investment-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #investment-form input,
+        #investment-form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+        }
+
+        #investment-form button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #FF9800;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #investment-form button:hover {
+            background-color: #003366;
+        }
+
+        
+    #card-number,
+    #gateway,
+    #Bank-Account {
+        display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Balance Funds</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>What are Balance Funds?</h2>
+            <div class="info-box">
+                <p>Balance funds, also known as hybrid funds, are investment funds that invest in a mix of asset
+                    classes,
+                    typically a combination of stocks and bonds. These funds aim to provide investors with a balanced
+                    portfolio that offers both growth and income opportunities while managing risk. Balance funds are
+                    suitable for investors seeking diversification and a moderate level of risk.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Balance Fund </h2>
+        <table id="balanceFundData">
+            <thead>
+                <tr>
+                    <th>Fund Name</th>
+                    <th>Year-to-Date Return</th>
+                    <th>1-Year Return</th>
+                    <th>3-Year Return</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aditya Birla Sun Life Equity Fund</td>
+                    <td>10%</td>
+                    <td>15%</td>
+                    <td>25%</td>
+                </tr>
+                <tr>
+                    <td>Axis Equity Fund</td>
+                    <td>8%</td>
+                    <td>12%</td>
+                    <td>20%</td>
+                </tr>
+                <tr>
+                    <td>ICICI Prudential Balanced Advantage Fund</td>
+                    <td>12%</td>
+                    <td>18%</td>
+                    <td>30%</td>
+                </tr>
+                <tr>
+                    <td>Kotak Standard Multicap Fund</td>
+                    <td>6%</td>
+                    <td>10%</td>
+                    <td>15%</td>
+                </tr>
+                <tr>
+                    <td>Mirae Asset India Equity Fund</td>
+                    <td>9%</td>
+                    <td>14%</td>
+                    <td>22%</td>
+                </tr>
+                <tr>
+                    <td>Parag Parikh Long Term Equity Fund</td>
+                    <td>7%</td>
+                    <td>11%</td>
+                    <td>18%</td>
+                </tr>
+                <tr>
+                    <td>SBI Bluechip Fund</td>
+                    <td>11%</td>
+                    <td>16%</td>
+                    <td>28%</td>
+                </tr>
+                <tr>
+                    <td>Tata Equity P/E Fund</td>
+                    <td>8.5%</td>
+                    <td>13%</td>
+                    <td>23.5%</td>
+                </tr>
+                <tr>
+                    <td>Motilal Oswal Multicap 35 Fund</td>
+                    <td>7.5%</td>
+                    <td>11.5%</td>
+                    <td>19.5%</td>
+                </tr>
+                <tr>
+                    <td>HDFC Mid-Cap Opportunities Fund</td>
+                    <td>9.5%</td>
+                    <td>14.5%</td>
+                    <td>24.5%</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        </section>
+
+        <section>
+            <h2>Balance Fund Products & Services</h2>
+            <ul id="balanceFundProducts">
+                <!-- Products and services will be dynamically added here using JavaScript -->
+            </ul>
+        </section>
+        
+  
+    <div class="invest-btn" id="investNowBtn">Invest Now</div>
+</footer>
+
+<div id="investment-form">
+    <h3>Balance-Fund Form</h3>
+    <form>
+        <!-- <label for="bank-account">Bank Account Number:</label>
+                <input type="text" id="bank-account" name="bank-account" required>
+
+                <label for="ifsc">IFSC Code:</label>
+                <input type="text" id="ifsc" name="ifsc" required> -->
+
+        <label for="plan">Choose Plan:</label>
+        <select id="plan" name="plan" required>
+            <option value="basic">HDFC Mid-Cap Opportunities Fund/option>
+            <option value="Third Party">Motilal Oswal Multicap 35 Fund</option>
+            <option value="Collision Coverage">Tata Equity P/E Fund</option>
+            <option value="Liability Coverage">SBI Bluechip Fund</option>
+            <option value="Personal Injury Protection">Parag Parikh Long Term Equity Fund</option>
+            <option value="Roadside Assistance">Mirae Asset India Equity Fund</option>
+            <option value="Uninsured/Underinsured Motorist Coverage">Kotak Standard Multicap Fund</option>
+            <option value="comprehensive">ICICI Prudential Balanced Advantage Fund</option>
+            <option value="comprehensive">Axis Equity Fund</option>
+            <option value="comprehensive">Aditya Birla Sun Life Equity Fund</option>
+        </select>
+
+
+<label for="time-period">Time Period:</label>
+<input type="text" id="time-period" name="time-period" required>
+
+<label for="Amount">Amount:</label>
+<input type="number" id="Amount" name="Amount" required>
+
+<label for="payment-method">Payment Method:</label>
+<select id="payment-method" name="payment-method" required>
+    <option value="bank-account">Bank Account</option>
+    <option value="debit-card">Debit Card</option>
+    <option value="credit-card">Credit Card</option>
+    <option value="phonepe">PhonePe</option>
+    <option value="paytm">Paytm</option>
+    <option value="google-pay">Google Pay</option>
+</select>
+
+<div id="card-number">
+    <label for="card-number-input">Card Number:</label>
+    <input type="text" id="card-number-input" name="card-number">
+    <label for="card-number-input">CVV:</label>
+    <input type="text" id="card-number-input" name="card-number">
+    <label for="expiryDate">Expiry Date (MM/YY):</label>
+    <input type="text" id="expiryDate" name="expiryDate" required>
+</div>
+
+<div id="gateway">
+    <label for="card-number-input">ID:</label>
+    <input type="text" id="card-number-input" name="card-number">
+    <label for="card-number-input">Password:</label>
+    <input type="text" id="card-number-input" name="card-number">
+</div>
+
+<div id="Bank-Account">
+    <label for="card-number-input">Bank Name:</label>
+    <input type="text" id="card-number-input" name="card-number">
+    <label for="card-number-input">Account Number:</label>
+    <input type="number" id="card-number-input" name="card-number">
+    <label for="card-number-input">IFSC:</label>
+    <input type="text" id="card-number-input" name="card-number">
+    <label for="card-number-input">MPIN:</label>
+    <input type="text" id="card-number-input" name="card-number">
+</div>
+
+<button type="submit">Submit</button>
+</form>
+</div>
+</main>
+
+<script>
+   document.getElementById('investNowBtn').addEventListener('click', function () {
+        document.getElementById('investment-form').style.display = 'block';
+        document.getElementById('investment-form').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.querySelectorAll('.invest-btn').forEach((button) => {
+        button.addEventListener('click', () => {
+            document.getElementById('investment-form').style.display = 'block';
+            document.getElementById('investment-form').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    document.getElementById('payment-method').addEventListener('change', function () {
+        var cardNumberDiv = document.getElementById('card-number');
+        var gatewayDiv = document.getElementById('gateway');
+        var bankAccountDiv = document.getElementById('Bank-Account');
+
+        cardNumberDiv.style.display = 'none';
+        gatewayDiv.style.display = 'none';
+        bankAccountDiv.style.display = 'none';
+
+        switch (this.value) {
+            case 'debit-card':
+            case 'credit-card':
+                cardNumberDiv.style.display = 'block';
+                break;
+            case 'phonepe':
+            case 'paytm':
+            case 'google-pay':
+                gatewayDiv.style.display = 'block';
+                break;
+            case 'bank-account':
+                bankAccountDiv.style.display = 'block';
+                break;
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+            // Array of balance fund product names
+            var balanceFundProducts = [
+                "HDFC Balanced Advantage Fund",
+                "ICICI Prudential Equity & Debt Fund",
+                "SBI Equity Hybrid Fund",
+                "Axis Hybrid Fund",
+                "Mirae Asset Hybrid Equity Fund",
+                "DSP Equity & Bond Fund",
+                "Kotak Balanced Advantage Fund",
+                "Aditya Birla Sun Life Equity Hybrid '95 Fund",
+                "L&T Hybrid Equity Fund",
+                "Nippon India Hybrid Equity Fund"
+            ];
+
+            // Get the <ul> element by its id
+            var ulElement = document.getElementById('balanceFundProducts');
+
+            // Loop through the balance fund product names array and create <li> elements for each item
+            balanceFundProducts.forEach(function (item) {
+                // Create a new <li> element
+                var liElement = document.createElement('li');
+                // Set the text content of the <li> element to the current item
+                liElement.textContent = item;
+                // Append the <li> element to the <ul> element
+                ulElement.appendChild(liElement);
+            });
+        });
+
+</script>
+</body>
+
+</html>

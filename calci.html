@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Define the title of the webpage -->
+    <title>Basic Calculator</title>
+
+    <!-- Style the calculator layout and buttons -->
+    <style>
+        /* Center the calculator on the page */
+        table {
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Style the calculator buttons */
+        input[type="button"] {
+            width: 100%;
+            /* Full width of the cell */
+            padding: 20px 40px;
+            /* Padding inside the button */
+            background-color: gold;
+            /* Button background color */
+            color: black;
+            /* Text color */
+            font-size: 24px;
+            /* Font size */
+            font-weight: bold;
+            /* Bold text */
+            border: none;
+            /* No border */
+            border-radius: 5px;
+            /* Rounded corners */
+        }
+
+        /* Style the calculator display */
+        input[type="text"] {
+            padding: 20px 30px;
+            /* Padding inside the input field */
+            font-size: 24px;
+            /* Font size */
+            font-weight: bold;
+            /* Bold text */
+            border: none;
+            /* No border */
+            border-radius: 5px;
+            /* Rounded corners */
+            border: 2px solid black;
+            /* Border around the input field */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main calculator layout using a table -->
+    <table id="calcu">
+        <!-- Display area at the top -->
+        <tr>
+            <td colspan="3">
+                <!-- Input field for displaying calculations -->
+                <input type="text" id="result">
+            </td>
+            <!-- Clear button -->
+            <td><input type="button" value="C"></td>
+        </tr>
+
+        <!-- Number buttons -->
+        <tr>
+            <td><input type="button" value="1"></td>
+            <td><input type="button" value="2"></td>
+            <td><input type="button" value="3"></td>
+            <td><input type="button" value="/"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4"></td>
+            <td><input type="button" value="5"></td>
+            <td><input type="button" value="6"></td>
+            <td><input type="button" value="*"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7"></td>
+            <td><input type="button" value="8"></td>
+            <td><input type="button" value="9"></td>
+            <td><input type="button" value="-"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0"></td>
+            <td><input type="button" value="."></td>
+            <td><input type="button" value="="></td>
+            <td><input type="button" value="+"></td>
+        </tr>
+    </table>
+
+    <!-- JavaScript for calculator functionality -->
+    <script>
+        // Wait until the DOM content is loaded
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all button elements
+            const buttons = Array.from(document.querySelectorAll('input[type="button"]'));
+
+            // Reference to the display element
+            const display = document.getElementById('result');
+
+            // Variables to hold operands and the current operator
+            let operand1 = '';
+            let operand2 = '';
+            let operator = '';
+
+            // Function to clear the screen
+            const clearScreen = () => {
+                operand1 = '';
+                operand2 = '';
+                operator = '';
+                display.value = ""; // Reset the display
+            };
+
+            // Function to append numbers to the first operand
+            const appendNumber = (number) => {
+                // Prevent adding a decimal point if the first operand already contains one
+                if (number === '.' && operand1.includes('.')) return;
+
+                // Handle starting with a decimal point
+                if (number === '.' && !operand1) operand1 += '0.';
+
+                // Append the number to the first operand
+                operand1 += number;
+                display.value = operand1; // Update the display
+            };
+
+            // Function to set the operator
+            const chooseOperator = (op) => {
+                // Only allow setting an operator if there's an operand available
+                if (operand1 !== '') {
+                    operand2 = operand1;
+                    operand1 = ''; // Reset the first operand
+                    operator = op; // Set the chosen operator
+                }
+            };
+
+            // Function to perform the calculation based on the stored operator
+            const calculateResult = () => {
+                let result;
+                switch (operator) {
+                    case '+':
+                        result = parseFloat(operand2) + parseFloat(operand1);
+                        break;
+                    case '-':
+                        result = parseFloat(operand2) - parseFloat(operand1);
+                        break;
+                    case '*':
+                        result = parseFloat(operand2) * parseFloat(operand1);
+                        break;
+                    case '/':
+                        result = parseFloat(operand2) / parseFloat(operand1);
+                        break;
+                    default:
+                        return; // No operation defined
+                }
+                operand1 = String(result); // Store the result as a string
+                operator = ''; // Reset the operator
+                operand2 = ''; // Reset the second operand
+                display.value = operand1; // Update the display with the result
+            };
+
+            // Attach event listeners to each button
+            buttons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const value = this.value;
+
+                    // Handle numeric inputs
+                    if (/[\d\.]/.test(value)) {
+                        appendNumber(value);
+                    }
+                    // Handle operator inputs
+                    else if (['+', '-', '*', '/'].includes(value)) {
+                        chooseOperator(value);
+                    }
+                    // Handle equals sign
+                    else if (value === '=') {
+                        calculateResult();
+                    }
+                    // Handle clear action
+                    else if (value === 'C') {
+                        clearScreen();
+                    }
+                });
+            });
+
+            // Initialize the calculator by clearing the screen
+            clearScreen();
+        });
+    </script>
+
+</body>
+
+</html>

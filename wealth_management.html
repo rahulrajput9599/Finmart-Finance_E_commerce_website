@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Wealth Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://t3.ftcdn.net/jpg/06/18/85/94/360_F_618859422_jYxZjA5MDWZBIYdprI71vzXa7Ay0kEJc.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+            /* Text color */
+        }
+
+        header {
+            background-color: #FD3D1F;
+            /* Header background color */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            background-color: #fff;
+            /* Navigation background color */
+            padding: 10px;
+            text-align: center;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav a {
+            color: #333;
+            /* Navigation link color */
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+            /* Smooth transition for link hover */
+        }
+
+        nav a:hover {
+            color: #FD3D1F;
+            /* Hover color for navigation links */
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        section {
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            /* Section background color */
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            /* Smooth transition for section hover */
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            /* Lift section on hover */
+        }
+
+        .service-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            /* Rounded corners for images */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            /* Shadow effect for images */
+            transition: transform 0.3s;
+            /* Smooth transition for image hover */
+        }
+
+        .service-image:hover {
+            transform: scale(1.05);
+            /* Scale up image on hover */
+        }
+
+        .start-planning-btn {
+            background-color: #FF5722;
+            /* Button background color */
+            border: none;
+            color: #fff;
+            /* Button text color */
+            padding: 10px 20px;
+            border-radius: 1.75rem;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            /* Smooth transition for button hover */
+        }
+
+        .start-planning-btn:hover {
+            background-color: #E64A19;
+            /* Darker shade on button hover */
+        }
+
+         footer {
+            background-color: #FD3D1F;
+            color: #fff;
+            padding: 0.2px;
+             height: 20px; 
+            text-align: center;
+            position: fixed;
+            bottom:0;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Wealth Management</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="investment-management.html">Investment Management</a></li>
+            <li><a href="financial-planing.html">Financial Planning</a></li>
+            <li><a href="estate_planing.html">Estate Planning</a></li>
+            <li><a href="tax_planing.html">Tax Planning</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="investment-management">
+            <h2>Investment Management</h2>
+            <img src="https://blog.ipleaders.in/wp-content/uploads/2020/09/investmentmanagement.jpg"
+                alt="Investment Management" class="service-image">
+            <p>Grow and protect your wealth with personalized investment strategies.</p>
+            <a href="investment_management.html">
+                <button class="start-planning-btn">Start Growing Your Wealth</button>
+            </a>
+
+        </section>
+
+        <section id="financial-planning">
+            <h2>Financial Planning</h2>
+            <img src="https://happay.com/blog/wp-content/uploads/sites/12/2023/06/financial-plan.webp"
+                alt="Financial Planning" class="service-image">
+            <p>Create a roadmap for your financial future with comprehensive financial planning services.</p>
+            <a href="financial-planing.html">
+                <button class="start-planning-btn">Forge a Path to Financial Freedom</button>
+            </a>
+
+        </section>
+
+        <section id="estate-planning">
+            <h2>Estate Planning</h2>
+            <img src="https://www.legalmantra.net/admin/assets/upload_image/blog/estate_planning.jpg"
+                alt="Estate Planning" class="service-image">
+            <p>Protect your assets and ensure your legacy with strategic estate planning solutions.</p>
+            <a href="estate_planing.html">
+                <button class="start-planning-btn">Begin Your Estate Journey</button>
+            </a>
+
+        </section>
+
+        <section id="tax-planning">
+            <h2>Tax Planning</h2>
+            <img src="https://www.easytaxplanner.com/blogs/wp-content/uploads/2022/07/758463-taxplanning-istock-112718.jpg"
+                alt="Tax Planning" class="service-image">
+            <p>Minimize tax liabilities and optimize your financial situation with expert tax planning services.</p>
+            <a href="tax_planing.html">
+                <button class="start-planning-btn">Optimize Your Tax Strategy</button>
+            </a>
+
+        </section>
+    </main>
+
+    <footer>
+        <!-- <p>&copy; 2024 Wealth Management. All rights reserved.</p> -->
+    </footer>
+
+    <script>
+        // Add event listeners to the "Contact Us" buttons
+        const contactButtons = document.querySelectorAll('.contact-btn');
+        contactButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Thank you for your interest! Please contact us for more information.');
+            });
+        });
+    </script>
+</body>
+
+</html>

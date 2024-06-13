@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Banking</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff4e6;
+            /* Light peach background */
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+        }
+
+        header {
+            background-color: #d35400;
+            /* Dark orange */
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #d35400;
+        }
+
+        header nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        .payment-section {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .payment-section h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #d35400;
+        }
+
+        .gateway-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .gateway {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 15px;
+        }
+
+        .gateway img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .gateway:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .payment-options {
+            display: none;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 15px;
+        }
+
+        .payment-options h2 {
+            margin-top: 0;
+            font-size: 22px;
+            color: #d35400;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+        }
+
+        button[type="submit"] {
+            background-color: #e74c3c;
+            /* Red */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #c0392b;
+        }
+
+        /* footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 0.1px 1;
+            background-color: #d35400;
+            color: white;
+            border-top: 0.5px solid #d35400;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        } */
+    </style>
+</head>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Online Banking</h1>
+            <nav>
+                <a href="Finmart.html">Home</a>
+                <a href="explore.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="payment-section">
+                <h2>Choose Your Payment Gateway</h2>
+                <div class="gateway-options">
+                    <div class="gateway" onclick="selectGateway('PayPal')">
+                        <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal">
+                        <p>PayPal</p>
+                    </div>
+                    <div class="gateway" onclick="selectGateway('PhonePe')">
+                        <img src="https://assets-global.website-files.com/64199d190fc7afa82666d89c/6491bed7fce3ac043b83b2e3_phonepe.png"
+                            alt="Stripe">
+                        <p>PhonePe</p>
+                    </div>
+                    <div class="gateway" onclick="selectGateway('Paytm')">
+                        <img src="data:image/png;base64,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"
+                            alt="Square">
+                        <p>Paytm</p>
+                    </div>
+                    <div class="gateway" onclick="selectGateway('Google Pay')">
+                        <img src="https://lh3.googleusercontent.com/frPbBfyjNNNGAGT93LKGESTJXjVW8Y3aI5-rTW4uiIHldMgCsEOlx14GZ20mzK5nOznS-H2fWNyv-UpaEOTuDMOc-frsyTXlu2W4"
+                            alt="Google Pay">
+                        <p>Google Pay</p>
+                    </div>
+                    <div class="gateway" onclick="selectGateway('Apple Pay')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                            alt="Apple Pay">
+                        <p>Apple Pay</p>
+                    </div>
+                    <div class="gateway" onclick="selectGateway('PNB')">
+                        <img src="https://logo.clearbit.com/pnbindia.in" alt="PNB">
+                        <p>PNB</p>
+                    </div>
+                    <div class="gateway" onclick="selectGateway('IOB')">
+                        <img src="https://logo.clearbit.com/iob.in" alt="IOB">
+                        <p>IOB</p>
+                    </div>
+                    <div class="gateway" onclick="selectGateway('SBI')">
+                        <img src="https://logo.clearbit.com/sbi.co.in" alt="SBI">
+                        <p>SBI</p>
+                    </div>
+                    <div class="gateway" onclick="selectGateway('Bank of Baroda')">
+                        <img src="https://logo.clearbit.com/bankofbaroda.com" alt="Bank of Baroda">
+                        <p>Bank of Baroda</p>
+                    </div>
+                    <div class="gateway" onclick="selectGateway('Karnataka Bank')">
+                        <img src="https://logo.clearbit.com/karnatakabank.com" alt="Karnataka Bank">
+                        <p>Karnataka Bank</p>
+                    </div>
+                    <div class="gateway" onclick="selectGateway('ICICI Bank')">
+                        <img src="https://logo.clearbit.com/icicibank.com" alt="ICICI Bank">
+                        <p>ICICI Bank</p>
+                    </div>
+                </div>
+            </section>
+
+            
+
+            <section class="payment-options" id="paymentOptions">
+                <h2>Enter Payment Details</h2>
+                <form id="paymentForm">
+                    <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="number" id="amount" name="amount" required>
+                    </div>
+
+                    <div class="form-group" id="idGroup">
+                        <label for="id">ID:</label>
+                        <input type="text" id="id" name="id" required>
+                    </div>
+
+                    <div class="form-group" id="passwordGroup">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <div class="form-group" id="accountNumberGroup" style="display:none;">
+                        <label for="accountNumber">Account Number:</label>
+                        <input type="text" id="accountNumber" name="accountNumber" required>
+                    </div>
+
+                    <div class="form-group" id="ifscGroup" style="display:none;">
+                        <label for="ifsc">IFSC:</label>
+                        <input type="text" id="ifsc" name="ifsc" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" required></textarea>
+                    </div>
+
+                    <button type="submit">Submit Payment</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <!-- <p>&copy; 2024 Online Banking. All rights reserved.</p> -->
+        </footer>
+    </div>
+
+    <script>
+
+        function selectGateway(gateway) {
+            document.getElementById('paymentOptions').style.display = 'block';
+            alert(gateway + ' selected!');
+            document.getElementById('paymentOptions').scrollIntoView({ behavior: 'smooth' });
+            updateFormFields(gateway);
+        }
+
+        function updateFormFields(gateway) {
+            var idGroup = document.getElementById('idGroup');
+            var passwordGroup = document.getElementById('passwordGroup');
+            var accountNumberGroup = document.getElementById('accountNumberGroup');
+            var ifscGroup = document.getElementById('ifscGroup');
+
+            if (gateway.toLowerCase().includes('phonepe') || gateway.toLowerCase().includes('paytm') || gateway.toLowerCase().includes('paypal') || gateway.toLowerCase().includes('stripe') || gateway.toLowerCase().includes('google') || gateway.toLowerCase().includes('apple')) {
+                idGroup.style.display = 'block';
+                passwordGroup.style.display = 'block';
+                accountNumberGroup.style.display = 'none';
+                ifscGroup.style.display = 'none';
+            } else {
+                idGroup.style.display = 'none';
+                passwordGroup.style.display = 'none';
+                accountNumberGroup.style.display = 'block';
+                ifscGroup.style.display = 'block';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('paymentForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                alert('Payment submitted successfully!');
+            });
+        });
+    </script>
+</body>
+
+</html>

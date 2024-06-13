@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Planning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    header {
+        background-color: #004d99;
+        color: #fff;
+        padding: 1.5em;
+        text-align: center;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2.5em;
+    }
+
+    /* Plans Section */
+    .plans {
+        background-color: #fff;
+        padding: 2em;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .plans ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .plans li {
+        width: 30%;
+        text-align: center;
+    }
+
+    .plans img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    .plans h3 {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #004d99;
+    }
+
+    .plans p {
+        font-size: 16px;
+        color: #666;
+    }
+
+    .invest-btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #004d99;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 15px;
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+    }
+
+    .invest-btn:hover {
+        background-color: #003366;
+    }
+
+    /* Features Section */
+    .features {
+        background-color: #fff;
+        padding: 2em;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .features ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .features li {
+        width: 18%;
+        text-align: center;
+    }
+
+    .features i {
+        font-size: 20px;
+        margin-right: 10px;
+        color: #004d99;
+    }
+
+    .features span {
+        font-size: 16px;
+        color: #666;
+    }
+
+    /* Investment Form Styles */
+   #investment-form {
+    display: none;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    width: 80%; /* Add this line to set the width of the form */
+    max-width: 600px; /* Add this line to set the maximum width of the form */
+    margin-left: auto; /* Add this line to center the form horizontally */
+    margin-right: auto; /* Add this line to center the form horizontally */
+}
+
+    #investment-form h3 {
+        text-align: center;
+        color: #004d99;
+        margin-bottom: 20px;
+    }
+
+    #investment-form label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    #investment-form input,
+    #investment-form select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 14px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+    }
+
+    #investment-form button {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #004d99;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 15px;
+        transition: background-color 0.3s;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    #investment-form button:hover {
+        background-color: #003366;
+    }
+
+    #card-number,
+    #gateway,
+    #Bank-Account {
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+    <header>
+        <h1>Financial Planning</h1>
+    </header>
+    <main>
+        <section class="plans">
+            <h2>Choose Your Plan</h2>
+            <ul>
+                <li>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL04CPsSvLTVUNZILEjriGbJhNdU5tmarzmQ&s"
+                        alt="Plan 1">
+                    <h3>Basic Plan</h3>
+                    <p>$9.99/month</p>
+                    <!-- <button class="invest-btn">Buy Now</button> -->
+                    <p>Features:</p>
+                    <ul>
+                        <li>Unlimited Budgeting</li>
+                        <li>Investment Tracking</li>
+                        <li>Expense Management</li>
+                    </ul>
+                </li>
+                <li>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQORKOKXRiT9DtYO5c8EarCuRgHGusbuc09Aw&s"
+                        alt="Plan 2">
+                    <h3>Standard Plan</h3>
+                    <p>$19.99/month</p>
+                    <!-- <button class="invest-btn">Buy Now</button> -->
+                    <p>Features:</p>
+                    <ul>
+                        <li>Unlimited Budgeting</li>
+                        <li>Investment Tracking</li>
+                        <li>Expense Management</li>
+                        <li>Financial Analysis</li>
+                    </ul>
+                </li>
+                <li>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWYYyXrW66juYhWQvKiHzTnJxhyzA0jqo6HgnwZIQ6cQ&s"
+                        alt="Plan 3">
+                    <h3>Premium Plan</h3>
+                    <p>$29.99/month</p>
+                    <!-- <button class="invest-btn">Buy Now</button> -->
+                    <p>Features:</p>
+                    <ul>
+                        <li>Unlimited Budgeting</li>
+                        <li>Investment Tracking</li>
+                        <li>Expense Management</li>
+                        <li>Financial Analysis</li>
+                        <li>Retirement Planning</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+            <section class="features">
+                <h2>Features</h2>
+                <ul>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        <span>Unlimited Budgeting</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        <span>Investment Tracking</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        <span>Expense Management</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        <span>Financial Analysis</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>
+                        <span>Retirement Planning</span>
+                    </li>
+                </ul>
+            </section>
+            
+            <div class="invest-btn" id="investNowBtn">Buy Now</div>
+            
+            <div id="investment-form">
+                <h3>Financial-planing Form</h3>
+                <form>
+                    <label for="plan">Choose Plan:</label>
+                    <select id="plan" name="plan" required>
+                        <option value="basic">Basic Plan</option>
+                        <option value="standard">Standard Plan</option>
+                        <option value="premium">Premium Plan</option>
+                    </select>
+            
+                    <label for="time-period">Time Period:</label>
+                    <input type="text" id="time-period" name="time-period" required>
+            
+                    <label for="Amount">Amount:</label>
+                    <input type="number" id="Amount" name="Amount" required>
+            
+                    <label for="payment-method">Payment Method:</label>
+                    <select id="payment-method" name="payment-method" required>
+                        <option value="bank-account">Bank Account</option>
+                        <option value="debit-card">Debit Card</option>
+                        <option value="credit-card">Credit Card</option>
+                        <option value="phonepe">PhonePe</option>
+                        <option value="paytm">Paytm</option>
+                        <option value="google-pay">Google Pay</option>
+                    </select>
+            
+                    <div id="card-number">
+                        <label for="card-number-input">Card Number:</label>
+                        <input type="text" id="card-number-input" name="card-number">
+                        <label for="card-number-input">CVV:</label>
+                        <input type="text" id="card-number-input" name="card-number">
+                        <label for="expiryDate">Expiry Date (MM/YY):</label>
+                        <input type="text" id="expiryDate" name="expiryDate" required>
+                    </div>
+            
+                    <div id="gateway">
+                        <label for="card-number-input">ID:</label>
+                        <input type="text" id="card-number-input" name="card-number">
+                        <label for="card-number-input">Password:</label>
+                        <input type="text" id="card-number-input" name="card-number">
+                    </div>
+            
+                    <div id="Bank-Account">
+                        <label for="card-number-input">Bank Name:</label>
+                        <input type="text" id="card-number-input" name="card-number">
+                        <label for="card-number-input">Account Number:</label>
+                        <input type="number" id="card-number-input" name="card-number">
+                        <label for="card-number-input">IFSC:</label>
+                        <input type="text" id="card-number-input" name="card-number">
+                        <label for="card-number-input">MPIN:</label>
+                        <input type="text" id="card-number-input" name="card-number">
+                    </div>
+            
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            </main>
+            
+            <script>
+                document.getElementById('investNowBtn').addEventListener('click', function () {
+                    document.getElementById('investment-form').style.display = 'block';
+                      document.getElementById('investment-form').scrollIntoView({ behavior: 'smooth' });
+                });
+
+                document.querySelectorAll('.invest-btn').forEach((button) => {
+                    button.addEventListener('click', () => {
+                        document.getElementById('investment-form').style.display = 'block';
+                          document.getElementById('investment-form').scrollIntoView({ behavior: 'smooth' });
+                    });
+                });
+
+                document.getElementById('payment-method').addEventListener('change', function () {
+                    var cardNumberDiv = document.getElementById('card-number');
+                    var gatewayDiv = document.getElementById('gateway');
+                    var bankAccountDiv = document.getElementById('Bank-Account');
+
+                    cardNumberDiv.style.display = 'none';
+                    gatewayDiv.style.display = 'none';
+                    bankAccountDiv.style.display = 'none';
+
+                    switch (this.value) {
+                        case 'debit-card':
+                        case 'credit-card':
+                            cardNumberDiv.style.display = 'block';
+                            break;
+                        case 'phonepe':
+                        case 'paytm':
+                        case 'google-pay':
+                            gatewayDiv.style.display = 'block';
+                            break;
+                        case 'bank-account':
+                            bankAccountDiv.style.display = 'block';
+                            break;
+                    }
+                });
+            </script>
+            </body>
+            </html>

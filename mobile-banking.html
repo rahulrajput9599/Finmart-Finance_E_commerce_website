@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Banking</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ff9800;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        .payment-section {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .payment-section h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #bf360c;
+        }
+
+        .gateway-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            justify-items: center;
+        }
+
+        .gateway {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gateway img {
+            max-width: 3600px;
+            margin-bottom: 30px;
+        }
+
+        .gateway:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .payment-options {
+            display: none;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-options h2 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #bf360c;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #bf360c;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            color: #333;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ff9800;
+            box-shadow: 0 0 5px rgba(255, 152, 0, 0.5);
+        }
+
+        button[type="submit"] {
+            background-color: #ff9800;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #f57c00;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 210px;
+            padding: 0.2px 0;
+            background-color: #ff9800;
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Mobile Banking</h1>
+            <nav>
+                <a href="Finmart.html">Home</a>
+                <a href="explore.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="payment-section">
+                <h2>Choose Your Payment Option</h2>
+                <div class="gateway-options">
+                    <div class="gateway" onclick="showGatewayOptions('single')">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT73J5I6roiXJFAiZedDb6WvSuVJYokaoGNsQ&s"
+                            alt="Single Payment Gateway">
+                        <p>Payment Through Mobile Number</p>
+                    </div>
+                    <div class="gateway" onclick="showGatewayOptions('multiple')">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT75gRVqLF9KZVa8OOSS3vSRqOPQmNG57_FQ_ziNYgh4Q&s"
+                            alt="Multiple Payment Gateways">
+                        <p> Payment through Multiple Gateways</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="payment-options" id="paymentOptions">
+                <h2 id="paymentTitle">Enter Payment Details</h2>
+                <form id="paymentForm">
+                    <div class="form-group" id="gatewaySelect" style="display: none;">
+                        <label for="gateway">Select Gateway:</label>
+                        <select id="gateway" name="gateway" required>
+                            <option value="PayPal">PayPal</option>
+                            <option value="Stripe">Stripe</option>
+                            <option value="Square">Paytm</option>
+                            <option value="Google Pay">Google Pay</option>
+                            <option value="Apple Pay">PhonePe</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="number" id="amount" name="amount" required>
+                    </div>
+                    <div class="form-group" id="mobileField">
+                        <label for="mobile">Mobile Number:</label>
+                        <input type="text" id="mobile" name="mobile" required>
+                    </div>
+                
+                <!-- Updated Form Group with Gap -->
+                <div class="form-group" id="accountField" style="display: none; margin-bottom: 20px;">
+                    <label for="account">ID:</label>
+                    <input type="text" id="account" name="account">
+                </div>
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+
+
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" required></textarea>
+                    </div>
+                    <button type="submit">Submit Payment</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Mobile Banking. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function showGatewayOptions(option) {
+            const paymentOptions = document.getElementById('paymentOptions');
+            const gatewaySelect = document.getElementById('gatewaySelect');
+            const mobileField = document.getElementById('mobileField');
+            const accountField = document.getElementById('accountField');
+            const paymentTitle = document.getElementById('paymentTitle');
+
+
+            paymentOptions.style.display = 'block';
+
+
+
+            if (option === 'multiple') {
+                gatewaySelect.style.display = 'block';
+                mobileField.style.display = 'none';
+                accountField.style.display = 'block';
+                paymentTitle.textContent = 'Enter Payment Details (Multiple Gateways)';
+                document.getElementById('paymentForm').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                gatewaySelect.style.display = 'none';
+                mobileField.style.display = 'block';
+                accountField.style.display = 'none';
+                paymentTitle.textContent = 'Enter Payment Details (Single Gateway)';
+               document.getElementById('paymentForm').scrollIntoView({ behavior: 'smooth' });
+            }
+            
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('paymentForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                alert('Payment submitted successfully!');
+            });
+
+        });
+    </script>
+</body>
+
+</html>

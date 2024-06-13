@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #666;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Insurance Products Styles */
+        .insurance-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 40px;
+        }
+
+        .insurance-product {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .insurance-product:hover {
+            transform: translateY(-10px);
+        }
+
+        .insurance-product img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            filter: brightness(0.9);
+        }
+
+        .insurance-product .content {
+            padding: 30px;
+        }
+
+        .insurance-product h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .insurance-product p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .insurance-product .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .insurance-product button {
+            flex: 1;
+            background-color: #e67e22;
+            color: #fff;
+            border: none;
+            border-radius: 16px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .insurance-product button:hover {
+            background-color: #d35400;
+        }
+
+        /* Insurance Forms Styles */
+        .insurance-forms {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            display: none;
+        }
+
+        .insurance-forms form {
+            margin-bottom: 25px;
+        }
+
+        .insurance-forms label {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .insurance-forms input,
+        .insurance-forms select,
+        .insurance-forms textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 20px;
+            background-color: #f8f8f8;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .insurance-forms input[type="submit"] {
+            background-color: #e67e22;
+            color: #fff;
+            border: none;
+            border-radius: 16px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .insurance-forms input[type="submit"]:hover {
+            background-color: #d35400;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Insurance Products</h1>
+            <p>Explore our insurance options and find the right coverage for you.</p>
+        </div>
+        <div class="insurance-products">
+            <div class="insurance-product" id="life-insurance-option">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                    alt="Life Insurance">
+                <div class="content">
+                    <h3>Life Insurance</h3>
+                    <p>Protect your loved ones with life insurance.</p>
+                    <div class="buttons">
+                        <button onclick="showForm('life-insurance-form')">Get Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="insurance-product" id="health-insurance-option">
+                <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                    alt="Health Insurance">
+                <div class="content">
+                    <h3>Health Insurance</h3>
+                    <p>Stay covered with comprehensive health insurance.</p>
+                    <div class="buttons">
+                        <button onclick="showForm('health-insurance-form')">Get Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="insurance-product" id="auto-insurance-option">
+                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                    alt="Auto Insurance">
+                <div class="content">
+                    <h3>Auto Insurance</h3>
+                    <p>Protect your vehicle with reliable auto insurance.</p>
+                    <div class="buttons">
+                        <button onclick="showForm('auto-insurance-form')">Get Quote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="insurance-forms" id="insurance-forms">
+            <form id="life-insurance-form" style="display: none;">
+                <label for="age">Age:</label>
+                <input type="number" id="age" required>
+                <label for="coverage-amount">Coverage Amount:</label>
+                <input type="number" id="coverage-amount" required>
+                <input type="submit" value="BUY NOW">
+            </form>
+            <form id="health-insurance-form" style="display: none;">
+                <label for="age">Age:</label>
+                <input type="number" id="age" required>
+                <label for="pre-existing-conditions">Pre-existing Conditions:</label>
+                <textarea id="pre-existing-conditions"></textarea>
+                <input type="submit" value="BUY NOW">
+            </form>
+            <form id="auto-insurance-form" style="display: none;">
+                <label for="vehicle-make">Vehicle Make:</label>
+                <input type="text" id="vehicle-make" required>
+                <label for="vehicle-model">Vehicle Model:</label>
+                <input type="text" id="vehicle-model" required>
+                <label for="driving-record">Driving Record:</label>
+                <textarea id="driving-record"></textarea>
+                <input type="submit" value="BUY NOW">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showForm(formId) {
+            document.getElementById("insurance-forms").style.display = "block";
+            document.getElementById("life-insurance-form").style.display = "none";
+            document.getElementById("health-insurance-form").style.display = "none";
+            document.getElementById("auto-insurance-form").style.display = "none";
+            document.getElementById(formId).style.display = "block";
+            document.getElementById(formId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>

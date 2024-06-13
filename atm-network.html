@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Locator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #atm-list {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .atm {
+            margin-bottom: 10px;
+        }
+
+        .atm h3 {
+            margin: 0 0 5px;
+            color: #333;
+        }
+
+        .atm p {
+            margin: 0;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ATM Network</h1>
+    <form id="atm-form">
+        <label for="bank-name">Bank Name:</label>
+        <input type="text" id="bank-name" name="bank-name" required>
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+        <label for="district">District:</label>
+        <input type="text" id="district" name="district" required>
+        <input type="submit" value="Search">
+    </form>
+    <div id="atm-list"></div>
+    <script>
+        const atmNetworks = {
+            "ABC Bank": [
+                "123 Main St, City1",
+                "456 Elm St, City2",
+                "789 Oak St, City3"
+            ],
+            "XYZ Bank": [
+                "111 First Ave, City4",
+                "222 Second Ave, City5",
+                "333 Third Ave, City6"
+            ],
+            "123 Bank": [
+                "444 Fourth St, City7",
+                "555 Fifth St, City8",
+                "666 Sixth St, City9"
+            ]
+        };
+
+        document.getElementById('atm-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const bankName = document.getElementById('bank-name').value.trim();
+            const state = document.getElementById('state').value.trim();
+            const district = document.getElementById('district').value.trim();
+            const atms = atmNetworks[bankName];
+            if (atms) {
+                const filteredATMs = atms.filter(location => location.toLowerCase().includes(state.toLowerCase()) && location.toLowerCase().includes(district.toLowerCase()));
+                displayATMs(filteredATMs);
+            } else {
+                displayATMs([]);
+            }
+        });
+
+        function displayATMs(atms) {
+            const atmList = document.getElementById('atm-list');
+            atmList.innerHTML = '';
+
+            if (atms.length === 0) {
+                atmList.innerHTML = '<p>No ATMs found for the given criteria.</p>';
+                return;
+            }
+
+            atms.forEach(atm => {
+                const atmDiv = document.createElement('div');
+                atmDiv.classList.add('atm');
+                const atmInfo = `
+                    <h3>${atmNetworks}</h3>
+                    <p><strong>Location:</strong> ${atm}</p>
+                `;
+                atmDiv.innerHTML = atmInfo;
+                atmList.appendChild(atmDiv);
+            });
+        }
+    </script>
+</body>
+
+</html>

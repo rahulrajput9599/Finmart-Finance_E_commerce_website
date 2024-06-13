@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Finmart</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #0047ab;
+            /* Dark Blue */
+            color: #fff;
+            padding: 0.2rem 0;
+            text-align: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+            /* Yellow */
+        }
+
+        /* Featured products styles */
+        .featured-products {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .featured-products h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #0047ab;
+            /* Dark Blue */
+            font-weight: bold;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 2rem;
+            justify-content: center;
+        }
+
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .product h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #0047ab;
+            /* Dark Blue */
+        }
+
+        .price {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .invest-btn {
+            background-color: #0047ab;
+            /* Dark Blue */
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 1.25rem;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .invest-btn:hover {
+            background-color: #003080;
+            /* Darker Blue */
+        }
+
+        footer {
+            background-color: #0047ab;
+            /* Dark Blue */
+            color: #fff;
+            padding: 0.2rem 0;
+            text-align: center;
+            margin-top: 13rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 0.2rem;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffcc00;
+            /* Yellow */
+        }
+
+        .finmart-logo {
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #0047ab;
+            /* Dark Blue */
+            color: #fff;
+            font-size: 2rem;
+            line-height: 100px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="https://dynamic.brandcrowd.com/asset/logo/67065e14-a842-4c55-aafa-18398217b8bc/logo-search-grid-1x?logoTemplateVersion=2&v=638512654290270000&text=Finm%40rt"
+            alt="Finm@rt Logo" class="finmart-logo">
+        <nav>
+            <ul>
+                <li><a href="Finmart.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <img src="https://img.freepik.com/free-photo/financial-business-investment_53876-94861.jpg?size=626&ext=jpg&ga=GA1.1.553209589.1715040000&semt=ais"
+                        alt="Investment Funds">
+                    <h3>Investment Funds</h3>
+                    <p class="price">$99.99</p>
+                    <a href="investment.html" class="invest-btn">View Details</a>
+                </div>
+                <div class="product">
+                    <img src="https://outlookmoney.com/public/uploads/article/gallery/7c2d5eeb0b1f3798371bfffaae7ec5e6.jpg"
+                        alt="Insurance Plans">
+                    <h3>Insurance Plans</h3>
+                    <p class="price">$49.99</p>
+                    <a href="insurance.html" class="invest-btn">View Details</a>
+                </div>
+                <div class="product">
+                    <img src="https://media.istockphoto.com/id/622064048/photo/hand-putting-coins-in-glass-jar-with-retro-alarm-clock.jpg?s=612x612&w=0&k=20&c=ZEmPLMNOCIHO7BNH-oXw46JnQfM5MTgFWKWTXkOHKi8="
+                        alt="Retirement Planning">
+                    <h3>Retirement Planning</h3>
+                    <p class="price">$79.99</p>
+                    <a href="retirement.html" class="invest-btn">View Details</a>
+                </div>
+                <div class="product">
+                    <img src="https://navi.com/blog/wp-content/uploads/2022/06/wealth-management.jpg"
+                        alt="Wealth Management">
+                    <h3>Wealth Management</h3>
+                    <p class="price">$199.99</p>
+                    <a href="wealth_management.html" class="invest-btn">View Details</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Finmart. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </p>
+    </footer>
+</body>
+</html>

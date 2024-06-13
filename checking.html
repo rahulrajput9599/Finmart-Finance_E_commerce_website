@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finm@rt - Checking Accounts</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e6f7ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff6f61;
+            margin-top: 0;
+            font-size: 2.5em;
+        }
+
+        header {
+            background-color: #ffb347;
+            padding: 20px 0;
+            color: white;
+            text-align: center;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        #options {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            background-color: #ff6f61;
+            color: white;
+            margin: 5px;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #ff3b3f;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form-group label {
+            flex: 1;
+            margin-right: 15px;
+            text-align: right;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        .form-group input,
+        .form-group button {
+            flex: 2;
+        }
+
+        label {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            max-width: 350px;
+            padding: 10px;
+            border-radius: 12px;
+            border: 2px solid #cccccc;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: #ff6f61;
+            outline: none;
+        }
+
+        #result {
+            padding: 15px;
+            background-color: #fff0f0;
+            border: 2px solid #ff6f61;
+            border-radius: 12px;
+            margin-top: 20px;
+            text-align: center;
+            max-width: 350px;
+            margin: 20px auto;
+        }
+
+        #basic-info {
+            background-color: #fdf5e6;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        #basic-info h2 {
+            color: #ff6f61;
+            font-size: 1.5em;
+        }
+
+        #basic-info p {
+            color: #4a4a4a;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Finm@rt - Checking Account</h1>
+    </header>
+    <div class="container">
+        <div id="options">
+            <button onclick="showCheckBalanceForm()">Check Bank Balance</button>
+            <button onclick="showDepositForm()">Deposit Money</button>
+            <button onclick="showWithdrawForm()">Withdraw Money</button>
+        </div>
+
+        <div id="basic-info">
+            <h2>About Banks</h2>
+            <p>Banking is the process of depositing and withdrawing money in and out of a bank account. You can use
+                various methods such as online banking, ATM machines, or visiting a bank branch to manage your funds.
+            </p>
+            <h3>How to Withdraw Money</h3>
+            <p>To withdraw money from your bank account, you can use an ATM machine, write a check, or visit a bank
+                branch in person. Make sure to have proper identification and your bank account information.</p>
+            <h3>How to Deposit Money</h3>
+            <p>To deposit money into your bank account, you can use an ATM machine, deposit cash or checks at a bank
+                branch, or transfer funds electronically from another account.</p>
+        </div>
+
+        <form id="check-balance-form" style="display: none;">
+            <div class="form-group">
+                <label for="customer-name">Customer Name:</label>
+                <input type="text" id="customer-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bank-account-number">Bank Account Number:</label>
+                <input type="text" id="bank-account-number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ifsc-code">IFSC Code:</label>
+                <input type="text" id="ifsc-code" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bank-name">Bank Name:</label>
+                <input type="text" id="bank-name" required>
+            </div>
+
+            <div class="form-group">
+                <button type="button" onclick="checkBalance()">Submit</button>
+            </div>
+        </form>
+
+        <form id="deposit-form" style="display: none;">
+            <div class="form-group">
+                <label for="customer-name-deposit">Customer Name:</label>
+                <input type="text" id="customer-name-deposit" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bank-account-number-deposit">Bank Account Number:</label>
+                <input type="text" id="bank-account-number-deposit" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ifsc-code-deposit">IFSC Code:</label>
+                <input type="text" id="ifsc-code-deposit" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bank-name-deposit">Bank Name:</label>
+                <input type="text" id="bank-name-deposit" required>
+            </div>
+
+            <div class="form-group">
+                <label for="deposit-amount">Deposit Amount:</label>
+                <input type="number" id="deposit-amount" required>
+            </div>
+
+            <div class="form-group">
+                <button type="button" onclick="deposit()">Deposit</button>
+            </div>
+        </form>
+
+        <form id="withdraw-form" style="display: none;">
+            <div class="form-group">
+                <label for="customer-name-withdraw">Customer Name:</label>
+                <input type="text" id="customer-name-withdraw" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bank-account-number-withdraw">Bank Account Number:</label>
+                <input type="text" id="bank-account-number-withdraw" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ifsc-code-withdraw">IFSC Code:</label>
+                <input type="text" id="ifsc-code-withdraw" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bank-name-withdraw">Bank Name:</label>
+                <input type="text" id="bank-name-withdraw" required>
+            </div>
+
+            <div class="form-group">
+                <label for="withdraw-amount">Withdraw Amount:</label>
+                <input type="number" id="withdraw-amount" required>
+            </div>
+
+            <div class="form-group">
+                <button type="button" onclick="withdraw()">Withdraw</button>
+            </div>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function showCheckBalanceForm() {
+            document.getElementById("check-balance-form").style.display = "block";
+            document.getElementById("deposit-form").style.display = "none";
+            document.getElementById("withdraw-form").style.display = "none";
+            document.getElementById("check-balance-form").scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showDepositForm() {
+            document.getElementById("check-balance-form").style.display = "none";
+            document.getElementById("deposit-form").style.display = "block";
+            document.getElementById("withdraw-form").style.display = "none";
+            document.getElementById("deposit-form").scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showWithdrawForm() {
+            document.getElementById("check-balance-form").style.display = "none";
+            document.getElementById("deposit-form").style.display = "none";
+            document.getElementById("withdraw-form").style.display = "block";
+            document.getElementById("withdraw-form").scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function checkBalance() {
+            const balance = Math.floor(Math.random() * 10000) + 1;
+            document.getElementById("result").innerText = `Current bank balance: $${balance}`;
+        }
+
+        function deposit() {
+            const depositAmount = parseFloat(document.getElementById("deposit-amount").value);
+            if (!isNaN(depositAmount) && depositAmount > 0) {
+                const balance = Math.floor(Math.random() * 10000) + depositAmount;
+                document.getElementById("result").innerText = `Successfully deposited $${depositAmount}. Current bank balance: $${balance}`;
+            } else {
+                alert("Invalid deposit amount. Please enter a valid number.");
+            }
+        }
+
+        function withdraw() {
+            const withdrawAmount = parseFloat(document.getElementById("withdraw-amount").value);
+            const balance = Math.floor(Math.random() * 10000);
+            if (!isNaN(withdrawAmount) && withdrawAmount > 0) {
+                if (withdrawAmount <= balance) {
+                    const remainingBalance = balance - withdrawAmount;
+                    document.getElementById("result").innerText = `Successfully withdrawn $${withdrawAmount}. Current bank balance: $${remainingBalance}`;
+                } else {
+                    document.getElementById("result").innerText = "Insufficient funds.";
+                }
+            } else {
+                alert("Invalid withdrawal amount. Please enter a valid number.");
+            }
+        }
+    </script>
+</body>
+
+</html>

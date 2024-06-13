@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nifty</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background-color: #f0f0f0;
+            /* Light gray background */
+        }
+
+        h1,
+        h3 {
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+            /* Adding a fallback font */
+            font-weight: bold;
+            /* Making the headings bold */
+            text-transform: uppercase;
+            /* Transforming text to uppercase */
+            letter-spacing: 1px;
+            /* Adding letter spacing for better readability */
+        }
+
+        .company-section {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            color: #fff;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            background-color: #4CAF50;
+            /* Default background color */
+        }
+
+        .company-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .company-section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .company-section p {
+            font-size: 16px;
+        }
+
+        .company-section .invest-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .company-section .invest-btn:hover {
+            background-color: #555;
+        }
+
+        /* Change heading colors */
+        .company-section h2 {
+            color: #eff1f3;
+            /* Blue color for headings */
+        }
+
+        /* Change company colors */
+        .reliance {
+
+            background-color: #e60000;
+            /* Light gray background for Reliance */
+        }
+
+        .tcs {
+
+            background-color: #00a651;
+            /* Light gray background for TCS */
+        }
+
+        .hdfc {
+
+            background-color: #ff9900;
+            /* Light gray background for HDFC */
+        }
+
+        .infosys {
+
+            background-color: #3366cc;
+            /* Light gray background for Infosys */
+        }
+
+        .hdfc-bank {
+
+            background-color: #8c1aff;
+            /* Light gray background for HDFC Bank */
+        }
+
+        .icici-bank {
+
+            background-color: #ff6666;
+            /* Light gray background for ICICI Bank */
+        }
+
+        .hindustan-unilever {
+
+            background-color: #00cc99;
+            /* Light gray background for Hindustan Unilever */
+        }
+
+        .axis-bank {
+
+            background-color: #ff9933;
+            /* Light gray background for Axis Bank */
+        }
+
+        .bajaj-finance {
+
+            background-color: #6600cc;
+            /* Light gray background for Bajaj Finance */
+        }
+
+        .asian-paints {
+
+            background-color: #009999;
+            /* Light gray background for Asian Paints */
+        }
+
+        h1 {
+            font-size: 36px;
+            /* Increasing the font size of the heading */
+        }
+
+        h3 {
+            font-size: 24px;
+            /* Increasing the font size of the subheading */
+        }
+
+        .invest-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #ffc93c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .invest-btn:hover {
+            background-color: #990505;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #investment-form {
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="submit"] {
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: #555;
+        }
+
+        /* Investment Form Styles */
+        #investment-form {
+            display: none;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            width: 80%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #investment-form h3 {
+            text-align: center;
+            color: #FF9800;
+        }
+
+        #investment-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #investment-form input,
+        #investment-form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+        }
+
+        #investment-form button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #FF9800;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #investment-form button:hover {
+            background-color: #003366;
+        }
+
+        #card-number,
+        #gateway,
+        #Bank-Account {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Nifty </h1>
+        <h3>Top Companies in India</h3>
+
+        <div class="company-section reliance">
+            <h2>Reliance Industries Ltd.</h2>
+            <p>Reliance Industries Limited is a conglomerate engaged in energy, petrochemicals, textiles, natural
+                resources,
+                retail, and telecommunications.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="company-section tcs">
+            <h2>Tata Consultancy Services Ltd. (TCS)</h2>
+            <p>Tata Consultancy Services is a multinational IT services company providing IT consulting, solutions, and
+                services.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="company-section hdfc">
+            <h2>Housing Development Finance Corporation Ltd. (HDFC)</h2>
+            <p>HDFC is a leading provider of housing finance and other financial services in India.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="company-section infosys">
+            <h2>Infosys Ltd.</h2>
+            <p>Infosys Limited is a multinational corporation providing business consulting, information technology, and
+                outsourcing services.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="company-section hdfc-bank">
+            <h2>HDFC Bank Ltd.</h2>
+            <p>HDFC Bank is one of India's largest private sector banks offering a wide range of banking and financial
+                services.
+            </p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="company-section icici-bank">
+            <h2>ICICI Bank Ltd.</h2>
+            <p>ICICI Bank is a leading private sector bank in India offering a comprehensive range of banking products
+                and
+                financial services.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="company-section hindustan-unilever">
+            <h2>Hindustan Unilever Ltd.</h2>
+            <p>Hindustan Unilever is a consumer goods company offering a wide range of products in home care, personal
+                care, and food and refreshment categories.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="company-section axis-bank">
+            <h2>Axis Bank Ltd.</h2>
+            <p>Axis Bank is a private sector bank in India offering a comprehensive range of financial products and
+                services to corporate and retail customers.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="company-section bajaj-finance">
+            <h2>Bajaj Finance Ltd.</h2>
+            <p>Bajaj Finance is a non-banking financial company offering consumer finance, small and medium-sized
+                enterprises (SME) finance, and commercial lending.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+        <div class="company-section asian-paints">
+            <h2>Asian Paints Ltd.</h2>
+            <p>Asian Paints is a leading paint company in India offering a wide range of decorative paints, industrial
+                coatings, and adhesives.</p>
+            <div class="invest-btn" id="investNowBtn">Invest Now</div>
+        </div>
+
+
+    </div>
+
+
+    <div id="investment-form" class="hidden">
+        <h2>Payment Form</h2>
+        <form>
+
+            <label for="selected-bond">Selected Bond:</label>
+            <input type="text" id="selected-bond" name="selected-bond" readonly>
+            <!-- <label for="corporation-name">Select Corporation:</label>
+                <select id="corporation-name" name="corporation-name" required>
+                    <option value="SBI">State Bank of India (SBI)</option>
+                    <option value="LIC">Life Insurance Corporation of India (LIC)</option>
+                    
+                </select> -->
+
+            <label for="time-period">Time Period:</label>
+            <input type="text" id="time-period" name="time-period" required>
+
+            <label for="Amount">Amount:</label>
+            <input type="number" id="Amount" name="Amount" required>
+
+            <label for="payment-method">Payment Method:</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="Bank-Account">Bank Account</option>
+                <option value="debit-card">Debit Card</option>
+                <option value="credit-card">Credit Card</option>
+                <option value="phonepe">PhonePe</option>
+                <option value="paytm">Paytm</option>
+                <option value="google-pay">Google Pay</option>
+            </select>
+
+            <div id="card-number">
+                <label for="card-number-input">Card Number:</label>
+                <input type="text" id="card-number-input" name="card-number" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+
+                <label for="expiryDate">Expiry Date (MM/YY):</label>
+                <input type="text" id="expiryDate" name="expiryDate" required>
+            </div>
+
+            <div id="gateway">
+                <label for="gateway-id">ID:</label>
+                <input type="text" id="gateway-id" name="gateway-id" required>
+
+                <label for="gateway-password">Password:</label>
+                <input type="password" id="gateway-password" name="gateway-password" required>
+            </div>
+
+            <div id="Bank-Account">
+                <label for="bank-name">Bank Name:</label>
+                <input type="text" id="bank-name" name="bank-name" required>
+
+                <label for="account-number">Account Number:</label>
+                <input type="number" id="account-number" name="account-number" required>
+
+                <label for="ifsc">IFSC:</label>
+                <input type="text" id="ifsc" name="ifsc" required>
+
+                <label for="mpin">MPIN:</label>
+                <input type="password" id="mpin" name="mpin" required>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    </div>
+    <script>
+        document.getElementById('investNowBtn').addEventListener('click', function () {
+            document.getElementById('investment-form').style.display = 'block';
+            document.getElementById('investment-form').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('payment-method').addEventListener('change', function () {
+            var cardNumber = document.getElementById('card-number');
+            var gateway = document.getElementById('gateway');
+            var bankAccount = document.getElementById('Bank-Account');
+
+            cardNumber.style.display = 'none';
+            gateway.style.display = 'none';
+            bankAccount.style.display = 'none';
+
+            if (this.value === 'debit-card' || this.value === 'credit-card') {
+                cardNumber.style.display = 'block';
+            } else if (this.value === 'phonepe' || this.value === 'paytm' || this.value === 'google-pay') {
+                gateway.style.display = 'block';
+            } else if (this.value === 'Bank-Account') {
+                bankAccount.style.display = 'block';
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const investButtons = document.querySelectorAll('.invest-btn');
+            const investmentForm = document.getElementById('investment-form');
+
+            investButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Show the investment form
+                    investmentForm.classList.remove('hidden');
+
+                    // Scroll to the investment form
+                    investmentForm.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Select the investment form
+            const investmentForm = document.getElementById('investment-form');
+            // Select the input field for the selected bond
+            const selectedBondInput = document.getElementById('selected-bond');
+
+            // Add click event listener to each 'invest-btn' element
+            const investButtons = document.querySelectorAll('.invest-btn');
+            investButtons.forEach(button => {
+                button.addEventListener('click', openInvestmentForm);
+            });
+
+            // Function to open the investment form and populate the selected bond
+            function openInvestmentForm() {
+                // Show the investment form by removing the 'hidden' class
+                investmentForm.style.display = 'block';
+
+                // Scroll to the investment form smoothly
+                investmentForm.scrollIntoView({ behavior: 'smooth' });
+
+                // Extract the bond name associated with the clicked button
+                const bondName = this.parentNode.querySelector('h2').textContent.trim();
+                // Set the value of the selected bond input field
+                selectedBondInput.value = bondName;
+            }
+        });
+    </script>
+</body>
+
+</html>

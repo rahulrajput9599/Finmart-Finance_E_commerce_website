@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Form Styles */
+        select,
+        input[type="radio"],
+        input[type="text"],
+        input[type="number"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #paymentOptions {
+            margin-top: 30px;
+            display: none;
+        }
+
+        .payment-options {
+            margin-top: 20px;
+        }
+
+        .payment-options button {
+            width: auto;
+            margin-top: 15px;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .payment-options button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Bill Payment</h2>
+        <form id="billPaymentForm">
+            <label for="billType">Select Bill Type:</label>
+            <select id="billType" name="billType">
+                <option value="phoneRecharge">Phone Recharge</option>
+                <option value="gasBill">Gas Bill</option>
+                <option value="electricityBill">Electricity Bill</option>
+                <option value="houseRent">House Rent</option>
+                <option value="other">Other</option>
+            </select>
+
+            <button type="button" onclick="showPaymentOptions()">Pay Bill</button>
+        </form>
+
+        <div id="paymentOptions">
+            <h2>Select Payment Gateway:</h2>
+            <div class="payment-options">
+                <input type="radio" id="paypal" name="paymentGateway" value="paypal">
+                <label for="paypal">PayPal</label><br>
+                <input type="radio" id="stripe" name="paymentGateway" value="stripe">
+                <label for="stripe">Stripe</label><br>
+                <input type="radio" id="phonePe" name="paymentGateway" value="phonePe">
+                <label for="phonePe">PhonePe</label><br>
+                <input type="radio" id="paytm" name="paymentGateway" value="paytm">
+                <label for="paytm">Paytm</label><br>
+                <input type="radio" id="debitCard" name="paymentGateway" value="debitCard">
+                <label for="debitCard">Debit Card</label><br>
+            </div>
+
+            <div class="payment-options" id="bankDetailsForm" style="display: none;">
+                <h2>Enter Bank Details:</h2>
+                <form id="bankDetailsForm">
+                    <div class="form-group">
+                        <label for="billNumber">Phone Number/Bill Number:</label>
+                        <input type="text" id="billNumber" name="billNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="accountNumber">Account Number:</label>
+                        <input type="text" id="accountNumber" name="accountNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="routingNumber">Debit Card Number:</label>
+                        <input type="text" id="routingNumber" name="routingNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="number" id="amount" name="amount" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" required></textarea>
+                    </div>
+                    <button type="submit">Submit Payment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPaymentOptions() {
+            document.getElementById('paymentOptions').style.display = 'block';
+        }
+
+        document.getElementById('billPaymentForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            showPaymentOptions();
+        });
+
+        document.getElementById('paymentOptions').addEventListener('change', function (event) {
+            if (event.target.name === 'paymentGateway') {
+                document.getElementById('bankDetailsForm').style.display = 'block';
+                updateBillNumberField();
+            }
+             window.scrollTo(0, document.getElementById('bankDetailsForm').offsetTop);
+        });
+
+        document.getElementById('bankDetailsForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Payment submitted successfully!');
+        });
+
+        function updateBillNumberField() {
+            var billType = document.getElementById('billType').value;
+            var billNumberLabel = document.querySelector('#bankDetailsForm .form-group:first-of-type label');
+            var billNumberInput = document.querySelector('#bankDetailsForm .form-group:first-of-type input');
+
+            if (billType === 'phoneRecharge') {
+                billNumberLabel.textContent = 'Phone Number:';
+                billNumberInput.type = 'tel';
+            } else {
+                billNumberLabel.textContent = 'Bill Number:';
+                billNumberInput.type = 'text';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Insurance Plans</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://media.licdn.com/dms/image/D5612AQHeNnCpqTsgag/article-cover_image-shrink_720_1280/0/1686711140630?e=2147483647&v=beta&t=1tJyJ7ZIsvhBnTsFH3eJGmenbd_dRC3wLgc17Zit3p8');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color:#ff6347;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff7f50, #ff6347);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Lobster', cursive;
+        }
+
+        nav {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #ff7f50;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px;
+        }
+
+         section {
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            /* Section background color */
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            /* Smooth transition for section hover */
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            /* Lift section on hover */
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            /* Rounded corners for images */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            /* Shadow effect for images */
+            transition: transform 0.3s;
+            /* Smooth transition for image hover */
+        }
+
+        .invest-btn {
+            background-color: #ff6347;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .invest-btn:hover {
+            background-color: #ff7f50;
+        }
+
+        footer {
+            background-color: #ff7f50;
+            color: #fff;
+            padding: 0.2px;
+             height: 20px; 
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Insurance Plans</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="life_insurance.html">Life Insurance</a></li>
+            <li><a href="health_insurance.html">Health Insurance</a></li>
+            <li><a href="auto_insurance.html">Auto Insurance</a></li>
+            <li><a href="home_insurance.html">Home Insurance</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="life-insurance">
+            <h2>Life Insurance</h2>
+            <img src="https://thumbs.dreamstime.com/b/life-insurance-concept-family-under-umbrella-life-insurance-concept-family-under-umbrella-213788643.jpg"
+                alt="Life Insurance" class="product-image">
+            <p>Protect your loved ones with comprehensive life insurance coverage.</p>
+            <a href="life_insurance.html">
+                <button class="invest-btn">Get Covered Now</button>
+            </a>
+        </section>
+
+        <section id="health-insurance">
+            <h2>Health Insurance</h2>
+            <img src="https://media.vyaparify.com/vcards/products/13020/Health-Insurance-Graphic-1.png"
+                alt="Health Insurance" class="product-image">
+            <p>Ensure access to quality healthcare with our health insurance plans.</p>
+            <a href="health_insurance.html">
+                <button class="invest-btn">Get Insured Today</button>
+            </a>
+        </section>
+
+        <section id="auto-insurance">
+            <h2>Auto Insurance</h2>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpD1owGqqgJXnTWIzN3RKtd6ZKPeimg8Ouk9wch3fqLA&s"
+                alt="Auto Insurance" class="product-image">
+            <p>Stay protected on the road with our customizable auto insurance options.</p>
+            <a href="auto_insurance.html">
+                <button class="invest-btn">Get Covered Now</button>
+            </a>
+        </section>
+
+        <section id="home-insurance">
+            <h2>Home Insurance</h2>
+            <img src="https://runwalgroup.in/blog/wp-content/uploads/2021/12/Why_is_Home_Insurance_Important.jpg"
+                alt="Home Insurance" class="product-image">
+            <p>Secure your home and belongings with our comprehensive home insurance policies.</p>
+            <a href="home_insurance.html">
+                <button class="invest-btn">Secure Your Home</button>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <!-- <p>&copy; 2024 Insurance Plans. All rights reserved.</p> -->
+    </footer> 
+
+    <script>
+        // Add event listeners to the "Get Covered Now" buttons
+        const quoteButtons = document.querySelectorAll('.invest-btn');
+        quoteButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // alert('Thank you for your interest! Please proceed to get a quote.');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #666;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Investment Options Styles */
+        .investment-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 40px;
+        }
+
+        .investment-option {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .investment-option:hover {
+            transform: translateY(-10px);
+        }
+
+        .investment-option img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            filter: brightness(0.9);
+        }
+
+        .investment-option .content {
+            padding: 30px;
+        }
+
+        .investment-option h3 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .investment-option p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .investment-option .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .investment-option button {
+            flex: 1;
+            background-color: #9b59b6;
+            color: #fff;
+            border: none;
+            border-radius: 16px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .investment-option button:hover {
+            background-color: #8e44ad;
+        }
+
+        /* Investment Forms Styles */
+        .investment-forms {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            display: none;
+        }
+
+        .investment-forms form {
+            margin-bottom: 25px;
+        }
+
+        .investment-forms label {
+            display: block;
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 12px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .investment-forms input,
+        .investment-forms select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 16px;
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 20px;
+            background-color: #f8f8f8;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .investment-forms input[type="submit"] {
+            background-color: #9b59b6;
+            color: #fff;
+            border: none;
+            border-radius: 16px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .investment-forms input[type="submit"]:hover {
+            background-color: #8e44ad;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Investment Management</h1>
+            <p>Explore our investment options and start building your portfolio today.</p>
+        </div>
+        <div class="investment-options">
+            <div class="investment-option" id="stock-option">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgONzvvofCgoJkr6quQwZi1oNijJJpGfXjMA&s"
+                    alt="Stock Market">
+                <div class="content">
+                    <h3>Stocks</h3>
+                    <p>Invest in individual stocks and build your portfolio.</p>
+                    <div class="buttons">
+                        <button onclick="showForm('stock-form')">Select Stock</button>
+                    </div>
+                </div>
+            </div>
+            <div class="investment-option" id="mutual-fund-option">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5g2Ep67hBwx8eKvxgghNSTLRfQxoJPkdYPA&s"
+                    alt="Mutual Fund">
+                <div class="content">
+                    <h3>Mutual Funds</h3>
+                    <p>Diversify your investments with mutual funds.</p>
+                    <div class="buttons">
+                        <button onclick="showForm('mutual-fund-form')">Select Mutual Fund</button>
+                    </div>
+                </div>
+            </div>
+            <div class="investment-option" id="index-fund-option">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwNaTHEuWkEglttkbHAtxXS0-shQ4v-XdBUg&s"
+                    alt="Index Fund">
+                <div class="content">
+                    <h3>Index Funds</h3>
+                    <p>Invest in a diversified portfolio that tracks a market index.</p>
+                    <div class="buttons">
+                        <button onclick="showForm('index-fund-form')">Select Index Fund</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="investment-forms" id="investment-forms">
+            <form id="stock-form" style="display: none;">
+                <label for="stock-option">Select Stock:</label>
+                <select id="stock-option" required>
+                    <option value="HDFC">HDFC</option>
+                    <option value="Reliance">Reliance</option>
+                    <option value="Tata">Tata</option>
+                    <option value="Mahindra">Mahindra</option>
+                    <option value="SBI">SBI</option>
+                    <option value="Others">Others</option>
+                </select>
+                <label for="stock-amount">Amount:</label>
+                <input type="text" id="stock-amount" required>
+                <input type="submit" value="Invest">
+            </form>
+            <form id="mutual-fund-form" style="display: none;">
+                <label for="mutual-fund-option">Select Mutual Fund:</label>
+                <select id="mutual-fund-option" required>
+                    <option value="Money Market Funds">Money Market Funds</option>
+                    <option value="Hybrid Funds">Hybrid Funds</option>
+                    <option value="Growth Funds">Growth Funds</option>
+                    <option value="Income Funds">Income Funds</option>
+                    <option value="Liquid Funds">Liquid Funds</option>
+                    <option value="Tax Saving Funds">Tax Saving Funds</option>
+                    <option value="Aggressive Growth Funds">Aggressive Growth Funds</option>
+                </select>
+                <label for="mutual-fund-amount">Amount:</label>
+                <input type="text" id="mutual-fund-amount" required>
+                <input type="submit" value="Invest">
+            </form>
+            <form id="index-fund-form" style="display: none;">
+                <label for="index-fund-option">Select Index Fund:</label>
+                <select id="index-fund-option" required>
+                    <option value="Broad market index funds">Broad market index funds</option>
+                    <option value="Factor-based or smart beta index funds">Factor-based or smart beta index funds
+                    </option>
+                    <option value="Market capitalisation index funds">Market capitalisation index funds</option>
+                    <option value="Equal weight index funds">Equal weight index funds</option>
+                    <option value="Debt index funds">Debt index funds</option>
+                    <option value="Sector-based Index funds">Sector-based Index funds</option>
+                    <option value="Custom index funds">Custom index funds</option>
+                </select>
+                <label for="index-fund-amount">Amount:</label>
+                <input type="text" id="index-fund-amount" required>
+                <input type="submit" value="Invest">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showForm(formId) {
+            document.getElementById("investment-forms").style.display = "block";
+            document.getElementById("stock-form").style.display = "none";
+            document.getElementById("mutual-fund-form").style.display = "none";
+            document.getElementById("index-fund-form").style.display = "none";
+            document.getElementById(formId).style.display = "block";
+            document.getElementById(formId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>

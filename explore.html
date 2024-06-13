@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Financial Products and Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://alltopstartups.com/wp-content/uploads/2018/07/The-Emergence-of-New-Business-Models-in-the-Financial-Services-Industry.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #f4f4f9;
+        }
+
+          header {
+        background: linear-gradient(135deg, #4CAF50, #8BC34A);
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 16px;
+        font-weight: bold;
+        position: relative;
+    }
+
+    nav a::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #f4f4f9;
+        transition: width 0.3s;
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    nav a:hover::after {
+        width: 100%;
+    }
+
+    main {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        color: #4CAF50;
+        font-size: 28px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: 'Lobster', cursive;
+        position: relative;
+    }
+
+    h2::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: #8BC34A;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .product-list,
+    .service-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 20px;
+        justify-items: center;
+    }
+
+    .product-list li,
+    .service-list li {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        color: #333;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product-list li:hover,
+    .service-list li:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .why-choose-us {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .why-choose-us p {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* footer {
+        background-color: #4CAF50;
+        color: #fff;
+        text-align: center;
+        padding: 0.1px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    } */
+</style>
+</head>
+
+<body>
+    <header>
+        <h1>Financial Products and Services</h1>
+        <nav>
+            <a href="Finmart.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Our Financial Products</h2>
+            <ul class="product-list">
+                <li onclick="window.location.href='savings.html'">Savings Accounts</li>
+                <li onclick="window.location.href='checking.html'">Checking Accounts</li>
+                <li onclick="window.location.href='cds.html'">Certificates of Deposit (CDs)</li>
+                <li onclick="window.location.href='money-market.html'">Money Market Accounts</li>
+                <li onclick="window.location.href='iras.html'">Individual Retirement Accounts (IRAs)</li>
+                <li onclick="window.location.href='loans.html'">Loans (Personal, Auto, Home, Business)</li>
+                <li onclick="window.location.href='credit-cards.html'">Credit Cards</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Our Financial Services</h2>
+            <ul class="service-list">
+                <li onclick="window.location.href='online-banking.html'">Online Banking</li>
+                <li onclick="window.location.href='mobile-banking.html'">Mobile Banking</li>
+                <li onclick="window.location.href='bill-pay.html'">Bill Pay</li>
+                <li onclick="window.location.href='DD.html'">Direct Deposit</li>
+                <li onclick="window.location.href='wire-transfer.html'">Wire Transfers</li>
+                <li onclick="window.location.href='debit-cards.html'">Debit Cards</li>
+                <li onclick="window.location.href='atm-network.html'">ATM Network</li>
+                <li onclick="window.location.href='financial-planing.html'">Financial Planning</li>
+                <li onclick="window.location.href='investment-management.html'">Investment Management</li>
+                <li onclick="window.location.href='insurance-product.html'">Insurance Products</li>
+            </ul>
+        </section>
+
+        <section class="why-choose-us">
+            <h2>Why Choose Us?</h2>
+            <p>At our financial institution, we are committed to providing you with the best products and services to
+                meet your financial needs. Our experienced team of professionals is dedicated to helping you achieve
+                your financial goals.</p>
+        </section>
+    </main>
+
+    <!-- <footer>
+        <p>&copy; 2024 Your Financial Institution. All rights reserved.</p>
+    </footer> -->
+
+    <script>
+        // Add any additional JavaScript functionality here
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Cards Hub</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 22px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff5722;
+            font-size: 2.4em;
+        }
+
+        .info-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .info-section h2 {
+            margin-bottom: 10px;
+            color: #ff5722;
+            text-transform: uppercase;
+            font-size: 1.8em;
+        }
+
+        .info-section p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .cards-section {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+
+        .card-option {
+            text-align: center;
+            max-width: 180px;
+        }
+
+        .card-option img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+
+        .card-option img:hover {
+            transform: scale(1.05);
+        }
+
+        .card-option button {
+            background-color: #ff5722;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .card-option button:hover {
+            background-color: #e64a19;
+        }
+
+        .action-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .action-buttons button {
+            background-color: #ff5722;
+            color: #ffffff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+
+        .action-buttons button:hover {
+            background-color: #e64a19;
+        }
+
+        .forms-container {
+            display: none;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .form-section {
+            flex: 1;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .form-section h2 {
+            margin-bottom: 20px;
+            color: #ff5722;
+            text-transform: uppercase;
+            font-size: 1.6em;
+        }
+
+        .form-section form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .form-section label {
+            flex: 1 1 100%;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .form-section input[type="text"],
+        .form-section input[type="number"] {
+            flex: 1 1 48%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        .form-section input[type="submit"] {
+            flex: 1 1 100%;
+            background-color: #ff5722;
+            color: #ffffff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+
+        .form-section input[type="submit"]:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to Credit Cards Hub</h1>
+
+        <!-- Basic Information Section -->
+        <div class="info-section">
+            <h2>Credit Card Information</h2>
+            <p>A credit card is a payment card issued to users (cardholders) to enable the cardholder to pay a merchant
+                for goods and services based on the cardholder's promise to the card issuer to pay them for the amounts
+                plus the other agreed charges. The card issuer (usually a bank) creates a revolving account and grants a
+                line of credit to the cardholder, from which the cardholder can borrow money for payment to a merchant
+                or as a cash advance.</p>
+        </div>
+
+        <!-- Credit Card Options -->
+        <div class="cards-section">
+            <div class="card-option">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlWpAfAVlopRUfJfYSuyvMlmGg3REPCZNftA&s"
+                    alt="Credit Card 1">
+                <button onclick="applyForCard('Credit Card 1')">Apply for Card 1</button>
+            </div>
+            <div class="card-option">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo8dxccf2kpkcmMsd6gv77U2gBc4BUpDAAcQ&s"
+                    alt="Credit Card 2">
+                <button onclick="applyForCard('Credit Card 2')">Apply for Card 2</button>
+            </div>
+            <div class="card-option">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu9ykrodRk_46hLsfYdSshbz-CObF6lnF-8A&s"
+                    alt="Credit Card 3">
+                <button onclick="applyForCard('Credit Card 3')">Apply for Card 3</button>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <!-- <button onclick="showForm('applyFormSection')">Apply for Credit Card</button> -->
+            <button onclick="showForm('paymentFormSection')">Make a Payment</button>
+        </div>
+
+        <!-- Forms Container -->
+        <div class="forms-container" id="formsContainer">
+            <!-- Apply Form -->
+            <div class="form-section" id="applyFormSection">
+                <h2>Apply for Credit Card</h2>
+                <form id="applyForm" action="#" method="post">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" required>
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="phone" required>
+                    <label for="accountNumber">Bank Account Number:</label>
+                    <input type="text" id="accountNumber" name="accountNumber" required>
+                    <label for="ifsc">Bank IFSC Code:</label>
+                    <input type="text" id="ifsc" name="ifsc" required>
+                    <input type="hidden" id="cardType" name="cardType">
+                    <input type="submit" value="Apply">
+                </form>
+            </div>
+
+            <!-- Payment Form -->
+            <div class="form-section" id="paymentFormSection">
+                <h2>Make a Payment</h2>
+                <form id="paymentForm" action="#" method="post">
+                    <label for="cardNumber">Credit Card Number:</label>
+                    <input type="text" id="cardNumber" name="cardNumber" required>
+                    <label for="expiryDate">Expiry Date (MM/YY):</label>
+                    <input type="text" id="expiryDate" name="expiryDate" required>
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required>
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" name="amount" required>
+                    <input type="submit" value="Pay">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       function showForm(formId) {
+            document.getElementById('formsContainer').style.display = 'flex';
+            document.getElementById('applyFormSection').style.display = 'none';
+            document.getElementById('paymentFormSection').style.display = 'none';
+            document.getElementById(formId).style.display = 'block';
+
+            // Scroll to the form section
+            document.getElementById(formId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function applyForCard(cardType) {
+            document.getElementById('cardType').value = cardType;
+            showForm('applyFormSection');
+        }
+
+        document.getElementById('applyForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Application submitted for ' + document.getElementById('cardType').value);
+            document.getElementById('applyForm').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('paymentForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Payment of ' + document.getElementById('amount').value + ' submitted');
+            document.getElementById('paymentForm').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        
+    </script>
+</body>
+
+</html>

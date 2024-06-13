@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Insurance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://example.com/your-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgba(72, 61, 139, 0.8);
+            /* Semi-transparent dark slate blue background */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Semi-transparent white background */
+            border-radius: 18px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 18px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #483D8B;
+            /* Dark slate blue */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .info-box {
+            background-color: #f4e1ff;
+            /* Light lavender background */
+            border-left: 5px solid #483D8B;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-box p {
+            margin: 0;
+        }
+
+        .invest-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #483D8B;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .invest-btn:hover {
+            background-color: #3b3173;
+        }
+
+      #investment-form {
+    display: none;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    width: 80%; /* Add this line to set the width of the form */
+    max-width: 600px; /* Add this line to set the maximum width of the form */
+    margin-left: auto; /* Add this line to center the form horizontally */
+    margin-right: auto; /* Add this line to center the form horizontally */
+}
+
+        #investment-form h3 {
+            text-align: center;
+            color:#483D8B;
+        }
+
+        #investment-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #investment-form input,
+        #investment-form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 14px;
+        }
+
+        #investment-form button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color:#483D8B;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #investment-form button:hover {
+            background-color: #003366;
+        }
+
+       
+    #card-number,
+    #gateway,
+    #Bank-Account {
+        display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Life Insurance</h1>
+        <h3>Your Gateway to Comprehensive Coverage</h3>
+    </header>
+
+    <main>
+        <section>
+            <h2>What is Life Insurance?</h2>
+
+            <div class="info-box">
+                <p>Life insurance is a contract between an insurer and a policyholder in which the insurer guarantees
+                    payment of a death benefit to named beneficiaries upon the death of the insured. The policyholder
+                    pays a premium, either regularly or as a lump sum, and in return, the insurer promises to pay a
+                    specified amount to the beneficiaries when the insured passes away. Life insurance provides
+                    financial protection and peace of mind to families by ensuring their financial needs are met in the
+                    event of the policyholder's death.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Life Insurance</h2>
+            <table id="lifeInsuranceData">
+                <thead>
+                    <tr>
+                        <!-- <th>Company Name</th> -->
+                        <th>Monthly Premium</th>
+                        <th>Coverage Amount</th>
+                        <th>Term Length</th>
+                        <th>Customer Rating</th>
+                    </tr>
+                    <tr>
+                        <!-- <td>ABC Insurance</td> -->
+                        <td>$120</td>
+                        <td>$100,000</td>
+                        <td>1 year</td>
+                        <td>4.2/5</td>
+                    </tr>
+                    <tr>
+                        <!-- <td>XYZ Insurance</td> -->
+                        <td>$150</td>
+                        <td>$150,000</td>
+                        <td>2 years</td>
+                        <td>4.5/5</td>
+                    </tr>
+                    <tr>
+                        <!-- <td>DEF Insurance</td> -->
+                        <td>$100</td>
+                        <td>$80,000</td>
+                        <td>6 months</td>
+                        <td>3.8/5</td>
+                    </tr>
+                    <tr>
+                        <!-- <td>GHI Insurance</td> -->
+                        <td>$200</td>
+                        <td>$200,000</td>
+                        <td>3 years</td>
+                        <td>4.7/5</td>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <!-- Data will be dynamically added here using JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Life Insurance Products & Services</h2>
+            <ul id="lifeInsuranceProducts">
+                <!-- Products and services will be dynamically added here using JavaScript -->
+            </ul>
+        </section>
+
+        <!-- <section>
+            <a href="life_insurance.html" class="invest-btn">Invest Now</a>
+        </section> -->
+
+        <footer style="text-align: center;">
+            <div class="invest-btn" id="investNowBtn">Get Insured Now</div>
+        </footer>
+        <div id="investment-form">
+            <h3>Healt-Insurancce Form</h3>
+            <form>
+                <!-- <label for="bank-account">Bank Account Number:</label>
+                <input type="text" id="bank-account" name="bank-account" required>
+
+                <label for="ifsc">IFSC Code:</label>
+                <input type="text" id="ifsc" name="ifsc" required> -->
+
+                <label for="plan">Choose Plan:</label>
+                <select id="plan" name="plan" required>
+                    <option value="Individual Health Insurance">Term Life Insurance or Term Plan.</option>
+                    <option value="Family Health Insurance">Whole Life Insurance.</option>
+                    <option value="Group Health Insurance">Child Insurance Plan.</option>
+                    <option value="Medicare Supplement Plans">Group Insurance Plan</option>
+                    <option value="Health Savings Accounts (HSA)">Money Back Plan</option>
+                    <option value="Dental Insurance">Savings & Investment Plans</option>
+                    <option value="Dental Insurance">Accidental Death and Dismemberment (AD&D) Insurance</option>
+                </select>
+
+
+
+                <label for="time-period">Time Period:</label>
+                <input type="text" id="time-period" name="time-period" required>
+
+                <label for="Amount">Amount:</label>
+                <input type="number" id="Amount" name="Amount" required>
+
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="bank-account">Bank Account</option>
+                    <option value="debit-card">Debit Card</option>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="phonepe">PhonePe</option>
+                    <option value="paytm">Paytm</option>
+                    <option value="google-pay">Google Pay</option>
+                </select>
+
+                <div id="card-number">
+                    <label for="card-number-input">Card Number:</label>
+                    <input type="text" id="card-number-input" name="card-number">
+                    <label for="card-number-input">CVV:</label>
+                    <input type="text" id="card-number-input" name="card-number">
+                    <label for="expiryDate">Expiry Date (MM/YY):</label>
+                    <input type="text" id="expiryDate" name="expiryDate" required>
+                </div>
+
+                <div id="gateway">
+                    <label for="card-number-input">ID:</label>
+                    <input type="text" id="card-number-input" name="card-number">
+                    <label for="card-number-input">Password:</label>
+                    <input type="text" id="card-number-input" name="card-number">
+                </div>
+
+                <div id="Bank-Account">
+                    <label for="card-number-input">Bank Name:</label>
+                    <input type="text" id="card-number-input" name="card-number">
+                    <label for="card-number-input">Account Number:</label>
+                    <input type="number" id="card-number-input" name="card-number">
+                    <label for="card-number-input">IFSC:</label>
+                    <input type="text" id="card-number-input" name="card-number">
+                    <label for="card-number-input">MPIN:</label>
+                    <input type="text" id="card-number-input" name="card-number">
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('investNowBtn').addEventListener('click', function () {
+            document.getElementById('investment-form').style.display = 'block';
+              document.getElementById('investment-form').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.querySelectorAll('.invest-btn').forEach((button) => {
+            button.addEventListener('click', () => {
+                document.getElementById('investment-form').style.display = 'block';
+                  document.getElementById('investment-form').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        document.getElementById('payment-method').addEventListener('change', function () {
+            var cardNumberDiv = document.getElementById('card-number');
+            var gatewayDiv = document.getElementById('gateway');
+            var bankAccountDiv = document.getElementById('Bank-Account');
+
+            cardNumberDiv.style.display = 'none';
+            gatewayDiv.style.display = 'none';
+            bankAccountDiv.style.display = 'none';
+
+            switch (this.value) {
+                case 'debit-card':
+                case 'credit-card':
+                    cardNumberDiv.style.display = 'block';
+                    break;
+                case 'phonepe':
+                case 'paytm':
+                case 'google-pay':
+                    gatewayDiv.style.display = 'block';
+                    break;
+                case 'bank-account':
+                    bankAccountDiv.style.display = 'block';
+                    break;
+            }
+        });
+    </script>
+</body>
+
+</html>
